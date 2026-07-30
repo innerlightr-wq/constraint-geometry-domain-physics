@@ -110,3 +110,15 @@ Paper and documentation are released under the **Creative Commons Attribution 4.
 ## Status
 
 Conceptual synthesis note. The manuscript introduces no new theorem, physical law, or empirical validation. It consolidates the architecture, terminology, safeguards, and epistemic boundaries developed across earlier work.
+
+Relationship to Existing Mathematical Frameworks
+
+This repository is intended as a conceptual framework for organizing constraint-based interpretations across several areas of mathematics and physics. It does not claim to introduce the mathematical theory of probability simplices, information geometry, or compositional data analysis.
+
+Many of the mathematical objects discussed here—including normalized positive partitions, probability simplices, and Fisher information geometry—have extensive prior literature. Likewise, hierarchical decompositions and basis-dependent coordinate systems have been studied in compositional data analysis through sequential binary partitions and log-ratio methods.
+
+The purpose of this repository is different. It investigates how the same constrained state spaces can serve as diagnostic coordinate systems for interpreting domain-specific physical models. The repository emphasizes the distinction between:
+
+* intrinsic properties of the constrained manifold,
+* properties introduced by a chosen decomposition or coordinate representation, and
+* physical meaning supplied by an external theory.
