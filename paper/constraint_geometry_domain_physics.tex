@@ -1,0 +1,1287 @@
+% =====================================================================
+%  Constraint Geometry and Domain Physics
+%  A conceptual synthesis note (methodological, non-theorem-bearing)
+%
+% =====================================================================
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\IfFileExists{lmodern.sty}{\usepackage{lmodern}}{}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{booktabs}
+\usepackage[margin=1in]{geometry}
+\IfFileExists{microtype.sty}{\usepackage[protrusion=true,expansion=false]{microtype}}{}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+
+% --- environments -----------------------------------------------------
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\theoremstyle{plain}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{lemma}[definition]{Lemma}
+\theoremstyle{remark}
+\newtheorem{remark}[definition]{Remark}
+\newtheorem{observation}[definition]{Observation}
+\newtheorem{interpretation}[definition]{Structural Interpretation}
+\newtheorem{safeguard}[definition]{Safeguard}
+
+% --- macros -----------------------------------------------------------
+\newcommand{\Ccrit}{C_{\mathrm{crit}}}
+\newcommand{\Rresp}{R}
+\newcommand{\lin}{{(1)}}
+\newcommand{\nonlin}{{(\ge 2)}}
+
+\title{\bfseries Constraint Geometry and Domain Physics:\\
+A Two-Layer Architecture for Binary Partition Diagnostics}
+
+\author{Elias De Jes\'us\\
+\small Independent Researcher\\
+\small ORCID: 0009-0007-0190-9143\\
+\small \texttt{dejesuselias10@gmail.com}}
+
+\date{July 2026 --- Conceptual Synthesis Note\\[2pt]
+\small DOI: \href{https://doi.org/10.5281/zenodo.21695430}{10.5281/zenodo.21695430}}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent
+This note clarifies the mature architecture of a binary-partition research
+programme without asserting a new theorem or a new physical law. The organizing
+claim is a division of labor: constraint geometry together with domain physics
+yields a physical diagnostic. The constraint layer is the conserved binary
+partition $a+b=1$ with Thales altitude $h=\sqrt{ab}$, asymmetry $\chi=a-b$ and
+response $R=1/(1-\chi^{2})=1/(4h^{2})$, together with intrinsic landmarks such
+as the crossing $h=a/b$, equivalent on the partition to $a=b^{3}$. The domain layer supplies the identity of
+the two sectors, the reason they form a normalized partition, the map
+$a/b=F(X)$ between a physical variable and the partition coordinates, the
+trajectory through the manifold, and the empirical meaning of any landmark. The
+perturbative decomposition of the Einstein tensor into linear and higher-order
+parts is developed as the primary example: general relativity motivates the
+schematic sector scaling $a/b\sim C$ with $C$ the compactness, and the
+intrinsic crossing then reads $C(1+C)^{2}=1$. The note emphasizes that the
+geometric landmark is fixed in partition space while its physical coordinate
+$X_{*}$ moves with the embedding $F$, so that an unjustified choice of $F$ can
+manufacture any desired threshold. A five-step protocol and an explicit
+epistemic tiering are given, and an illustration in flat $\Lambda$CDM
+separates two failure modes: one landmark there is derived from the dynamics
+but unoccupied, another occupied but provably mechanism-free.
+\end{abstract}
+
+\noindent\textbf{Keywords:} constraint geometry; binary partition; Thales
+altitude; domain embedding; intrinsic relational landmark; compactness
+diagnostic; perturbative general relativity; epistemic tiering.
+
+\tableofcontents
+
+% =====================================================================
+\section{Introduction}
+% =====================================================================
+
+\subsection{Purpose}
+
+A conserved two-sector decomposition appears in many parts of mathematics and
+physics: a probability allocation, a mass fraction, an energy budget, a density
+partition, a ratio of operator norms. Whenever two positive quantities are
+normalized so that they sum to one, the same small piece of geometry becomes
+available: a bounded state coordinate, a geometric mean, an asymmetry measure,
+a response measure, and a short list of relational landmarks fixed by the
+constraint alone.
+
+That availability is not a physical result, and the central purpose of this
+note is to say precisely what it is instead. The programme summarized here has
+at various points been described in language that invited a stronger reading
+than intended --- as though partition geometry were generating domain physics.
+The mature formulation is a division of labor,
+\begin{equation}
+\boxed{\;
+\text{constraint geometry}
+\;+\;
+\text{domain physics}
+\;\longrightarrow\;
+\text{physical diagnostic}\;}
+\label{eq:architecture}
+\end{equation}
+in which the two layers contribute different and non-interchangeable things.
+The note is a synthesis and clarification of results developed in earlier work
+\cite{TwoFace,EffPot,Newtonian2Body,IntrinsicCubic,CubicThreshold,ReverseThales};
+it introduces no new theorem and no new physical law.
+
+The central interpretive statement is the following.
+
+\begin{quote}
+\emph{Constraint geometry determines what relational structures and landmarks
+are available; domain physics determines which of them are physically realized
+and what they mean.}
+\end{quote}
+
+\subsection{What the two layers supply}
+
+The constraint layer supplies the invariant relational structure
+\begin{equation}
+a+b=1,\qquad
+h=\sqrt{ab},\qquad
+\chi=a-b,\qquad
+\Rresp=\frac{1}{1-\chi^{2}} ,
+\label{eq:coords}
+\end{equation}
+together with the coordinate identities among these quantities and any
+relational condition expressible in them alone.
+
+Domain physics supplies, separately and independently:
+\begin{enumerate}[label=(\roman*),leftmargin=*]
+\item the physical meaning of the two sectors;
+\item the reason those sectors form a genuine normalized partition rather than
+      an imposed one;
+\item the map between a physical variable and the partition coordinates;
+\item the trajectory through the partition manifold, if the system evolves;
+\item the empirical meaning, if any, of a geometric landmark.
+\end{enumerate}
+
+Neither layer produces a diagnostic alone. Constraint geometry without an
+embedding is a list of identities; an embedding without independent physical
+justification is a change of variables chosen to produce a desired answer.
+
+\subsection{Non-claims}
+\label{sec:nonclaims}
+
+This note does \emph{not} claim:
+\begin{enumerate}[label=(N\arabic*),leftmargin=*]
+\item that constraint geometry derives the Einstein field equations, or any
+      other domain field equation;
+\item that the intrinsic cubic is a universal law of gravity, a fundamental
+      constant of nature, or a universal physical phase transition;
+\item that nonlinear gravity begins suddenly at the cubic point, or that the
+      point marks a sharp physical onset of any kind;
+\item that two domains share dynamics because they share a partition;
+\item that a partition-space landmark has physical meaning prior to an
+      independently justified embedding;
+\item that the numerical value of any physical threshold obtained here is
+      fixed independently of the schematic normalization of the sector ratio;
+\item that any of the illustrations in \S\ref{sec:crossdomain} constitutes
+      empirical validation;
+\item that proximity of an observed value to a landmark is evidence, when the
+      neighbourhood of that landmark contains generic constants within
+      measurement error.
+\end{enumerate}
+
+% =====================================================================
+\section{Binary Partition Constraint Geometry}
+\label{sec:geometry}
+% =====================================================================
+
+\begin{definition}[Partition data]
+Let $a+b=1$ with $a,b>0$. Define the Thales altitude $h=\sqrt{ab}$, the
+asymmetry $\chi=a-b\in(-1,1)$, the response $\Rresp=1/(1-\chi^{2})$, the
+rapidity $\xi=\operatorname{arctanh}\chi$, and the partition ratio
+$r=a/b\in(0,\infty)$.
+\end{definition}
+
+Since $a=\tfrac12(1+\chi)$ and $b=\tfrac12(1-\chi)$, one has
+$ab=(1-\chi^{2})/4$, hence the exact constraint identity
+\begin{equation}
+4h^{2}+\chi^{2}=1,
+\qquad
+\Rresp=\frac{1}{1-\chi^{2}}=\frac{1}{4h^{2}} .
+\label{eq:thales}
+\end{equation}
+Equation~\eqref{eq:thales} is the analytic content of the Thales semicircle:
+the altitude and the half-asymmetry are the legs of a right triangle on a unit
+diameter. It is exact, parameter-free, and carries no physics.
+
+\begin{observation}[Bounded state, unbounded response]
+The state coordinate is bounded while the response and rapidity are not:
+$\chi\in(-1,1)$, $\Rresp\in[1,\infty)$, $\xi\in\mathbb{R}$. A divergence in
+$\Rresp$ therefore records approach to a partition boundary, in whatever
+coordinate the domain provides, and is not by itself evidence of a physical
+singularity \cite{TwoFace}.
+\end{observation}
+
+\subsection{Intrinsic relational landmarks}
+
+A relational landmark is a locus on the partition manifold specified by a
+condition written in the coordinates \eqref{eq:coords} alone. The landmark used
+throughout this note is the altitude--ratio crossing.
+
+\begin{proposition}[Altitude--ratio crossing; exact]
+\label{prop:crossing}
+On $a+b=1$ with $a,b>0$,
+\begin{equation}
+h=\frac{a}{b}
+\quad\Longleftrightarrow\quad
+a=b^{3}
+\quad\Longleftrightarrow\quad
+b^{3}+b-1=0 .
+\label{eq:crossing}
+\end{equation}
+The cubic $b^{3}+b-1$ is strictly increasing on $[0,1]$ with a sign change, so
+the crossing occurs at exactly one interior state, and
+\begin{equation}
+b_{*}=0.682327803828019\ldots,\qquad
+a_{*}=b_{*}^{3}=0.317672196171981\ldots,
+\end{equation}
+\begin{equation}
+h_{*}=b_{*}^{2}=r_{*}=\frac{a_{*}}{b_{*}}
+=0.465571231876768\ldots=\psi-1,
+\end{equation}
+where $\psi=1/b_{*}=1.465571\ldots$ satisfies $\psi^{3}=\psi^{2}+1$. In
+supergolden coordinates $(a_{*},h_{*},b_{*})=(\psi^{-3},\psi^{-2},\psi^{-1})$,
+with $\chi_{*}=a_{*}-b_{*}=-0.3646556\ldots$ and
+$\Rresp_{*}=\psi^{4}/4=1.1533676\ldots$
+\end{proposition}
+
+\begin{proof}
+If $h=a/b$ then $ab=a^{2}/b^{2}$, so $ab^{3}=a^{2}$ and, dividing by $a>0$,
+$b^{3}=a$. Conversely $a=b^{3}$ gives $h=\sqrt{b^{3}\cdot b}=b^{2}$ and
+$a/b=b^{2}$. Substituting $a=1-b$ gives $b^{3}+b-1=0$; the derivative
+$3b^{2}+1>0$ gives uniqueness. The identity $\psi-1=\psi^{-2}$ follows from
+$\psi^{3}=\psi^{2}+1$ on division by $\psi^{2}$; the closed forms for
+$h_{*}$ and $\Rresp_{*}$ then follow from \eqref{eq:thales}. These facts are
+established in \cite{IntrinsicCubic}.
+\end{proof}
+
+\begin{lemma}[Sign law; exact]
+\label{lem:sign}
+On the partition, $h>a/b\iff b^{3}>a\iff b>b_{*}$, and $h<a/b\iff b<b_{*}$.
+The crossing is therefore not a tangency: the two functions cross
+transversally, in the sense that the difference changes sign there.
+\end{lemma}
+
+\begin{remark}[What the landmark is, and is not]
+\label{rem:landmarkstatus}
+Proposition~\ref{prop:crossing} is a statement about two functions of one
+constrained variable. It says that the geometric mean of the two sectors and
+their ratio agree at exactly one interior state. It does not say that anything
+happens there. Nothing in \eqref{eq:crossing} refers to a physical system, and
+the number $0.465571\ldots$ is at this stage an algebraic constant of the
+partition, on the same footing as the apex value $h=\tfrac12$ at $\chi=0$.
+\end{remark}
+
+\begin{remark}[A caution on levels]
+\label{rem:levels}
+The altitude is a geometric mean of the two fractions --- an amplitude-level
+object --- while the ratio $a/b$ compares them directly. Setting the two equal
+is a partition-intrinsic relational condition; it is not a balance law between
+two physical quantities of like dimension, and should not be read as one. This
+caution is the reason the crossing is called a \emph{landmark} rather than an
+equilibrium or a threshold in this section \cite{CubicThreshold}.
+\end{remark}
+
+% =====================================================================
+\section{Domain Physics and Physical Embeddings}
+\label{sec:embedding}
+% =====================================================================
+
+\begin{definition}[Domain embedding]
+\label{def:embedding}
+Let $X$ be a physical variable of a domain, and let the domain identify two
+sectors whose normalized fractions are $a$ and $b$. A \emph{domain embedding}
+is a map
+\begin{equation}
+\frac{a}{b}=F(X),
+\qquad
+a=\frac{F(X)}{1+F(X)},
+\qquad
+b=\frac{1}{1+F(X)} ,
+\label{eq:embed}
+\end{equation}
+so that a trajectory in $X$ becomes a trajectory on the partition manifold.
+\end{definition}
+
+Two things must be supplied from outside the geometry before
+\eqref{eq:embed} means anything.
+
+First, the \emph{partition itself} must be genuine. The two sectors must
+exhaust a conserved or otherwise fixed total for a reason internal to the
+domain, not because they were divided by their sum for convenience. Any two
+positive quantities can be normalized; a partition is physically meaningful
+only when the normalization corresponds to a conservation law, a closure
+relation, an exact decomposition, or a definitional completeness.
+
+Second, the \emph{functional form of $F$} must be independently motivated. This
+is the load-bearing requirement of the whole architecture, and \S\ref{sec:marker}
+shows why: because the geometric landmark is fixed in partition space, the
+physical location of that landmark is determined entirely by $F$. An
+unconstrained $F$ can place a threshold wherever one wishes.
+
+\begin{observation}[Division of labor]
+\label{obs:labor}
+Constraint geometry fixes the set of available relational landmarks and their
+locations in partition space. Domain physics fixes which sectors are being
+partitioned, the embedding $F$, the trajectory, and the interpretation. A
+physical diagnostic exists only where both are supplied, and only survives
+scrutiny when the second is independently justified.
+\end{observation}
+
+% =====================================================================
+\section{The Perturbative General-Relativity Compactness Example}
+\label{sec:gr}
+% =====================================================================
+
+This section develops the motivating example. It is the case in which the
+partition is most clearly not imposed by hand, because the two sectors come
+from an exact rearrangement of a field equation.
+
+\subsection{An exact two-sector decomposition}
+
+Write $g_{\mu\nu}=\bar g_{\mu\nu}+h_{\mu\nu}$ with $\bar g$ a background and
+$h$ the perturbation. The Einstein tensor separates exactly into its part
+linear in $h$ and the remainder,
+\begin{equation}
+G_{\mu\nu}[g]
+= \underbrace{G^{\lin}_{\mu\nu}[h]}_{\text{linear}}
++ \underbrace{G^{\nonlin}_{\mu\nu}[h]}_{\text{higher order}} ,
+\label{eq:Gsplit}
+\end{equation}
+so that the field equation may be rewritten as
+\begin{equation}
+G^{\lin}_{\mu\nu}[h]
+= 8\pi G\,\bigl(T_{\mu\nu}+t_{\mu\nu}\bigr),
+\qquad
+t_{\mu\nu}\equiv -\frac{1}{8\pi G}\,G^{\nonlin}_{\mu\nu}[h] .
+\label{eq:rearrange}
+\end{equation}
+Equation~\eqref{eq:rearrange} is a rearrangement, not an approximation: the
+matter source and the gravitational self-energy contribution together form the
+effective source of the linear operator. The object $t_{\mu\nu}$ is
+gauge-dependent and is related in harmonic gauge to the standard
+gravitational stress pseudotensor \cite{LL,ChoquetBruhat}.
+
+This is what makes the two-sector reading legitimate here: the domain, not the
+geometry, says that there are exactly two channels and that they exhaust the
+effective source.
+
+\subsection{The schematic sector scaling}
+
+For a quasi-spherical configuration with compactness
+\begin{equation}
+C=\frac{2GM}{rc^{2}} ,
+\label{eq:compactness}
+\end{equation}
+the perturbation scales as $|h|\sim C$, and the leading higher-order terms of
+the Einstein tensor, being quadratic in $h$ and its derivatives, motivate the
+schematic estimate
+\begin{equation}
+\frac{\text{nonlinear sector}}{\text{linear sector}}
+\;=\;
+\frac{\bigl\|G^{\nonlin}\bigr\|}{\bigl\|G^{\lin}\bigr\|}
+\;\sim\; C .
+\label{eq:scaling}
+\end{equation}
+Statement \eqref{eq:scaling} belongs to standard perturbation
+theory \cite{MTW,ChoquetBruhat} and is not derived here. It is
+schematic in two respects that matter later: it is an
+order-of-magnitude relation between norms rather than an equality, and both
+norms are gauge- and slicing-dependent.
+
+\begin{remark}[Structural versus orbital compactness]
+\label{rem:structural}
+Two distinct quantities share the algebraic form \eqref{eq:compactness} and are
+routinely both called compactness, and the distinction matters for anything said
+later about perturbative accuracy. In \eqref{eq:compactness} as used here, $r$
+is a radius of the configuration itself, so $C$ is a \emph{structural} quantity:
+a fixed property of a star or a static geometry. In a compact binary, the
+post-Newtonian expansion is instead controlled by the orbital parameter
+$v^{2}/c^{2}\sim GM/(rc^{2})$ with $r$ the orbital \emph{separation}, a
+\emph{dynamical} quantity that sweeps upward through the inspiral. The two are
+not the same object, and a landmark value of one is not a landmark value of the
+other. Consequently, an observation that some numerical value is close both to
+the compactness of massive neutron stars and to the regime where post-Newtonian
+accuracy degrades is not one coincidence but two claims about two quantities
+that happen to share a symbol. This note keeps the structural reading
+throughout, and makes no claim about the orbital one.
+\end{remark}
+
+\subsection{Normalization and the partition}
+
+Normalizing the two sectors to a partition, and writing the ratio as the
+embedding $F(C)=C$,
+\begin{equation}
+\frac{a}{b}=C,
+\qquad
+a=\frac{C}{1+C},
+\qquad
+b=\frac{1}{1+C},
+\qquad
+a+b=1 .
+\label{eq:grembed}
+\end{equation}
+This is a domain embedding in the sense of Definition~\ref{def:embedding}. Its
+elementary properties are: $a<b$ for $C<1$, so the higher-order sector is the
+minority channel in the sub-horizon range; $a=b$ at $C=1$; and $a\to 0$ as
+$C\to 0$, recovering a single-channel linear description in the weak field.
+
+Independently of \eqref{eq:grembed}, the constraint geometry of
+\S\ref{sec:geometry} supplies
+\begin{equation}
+h=\sqrt{ab}=\frac{\sqrt C}{1+C} .
+\label{eq:grh}
+\end{equation}
+
+\subsection{The intersection}
+
+Imposing the intrinsic crossing condition $h=a/b$ of
+Proposition~\ref{prop:crossing} on the embedded partition gives, in partition
+coordinates, $a=b^{3}$, and in the physical coordinate
+\begin{equation}
+\frac{\sqrt C}{1+C}=C
+\quad\Longrightarrow\quad
+C(1+C)^{2}=1
+\quad\Longleftrightarrow\quad
+C^{3}+2C^{2}+C-1=0 ,
+\label{eq:cubicC}
+\end{equation}
+whose unique positive root is
+\begin{equation}
+\Ccrit=\psi-1=0.465571231876768\ldots=h_{*}=r_{*} .
+\label{eq:Ccrit}
+\end{equation}
+
+\begin{proof}[Derivation of \eqref{eq:cubicC}]
+From \eqref{eq:grh}, $h=C$ reads $\sqrt C=C(1+C)$; squaring gives
+$C=C^{2}(1+C)^{2}$ and dividing by $C>0$ gives $C(1+C)^{2}=1$. Equivalently,
+substituting \eqref{eq:grembed} into $b^{3}=a$ gives $(1+C)^{-3}=C(1+C)^{-1}$,
+i.e.\ the same polynomial after multiplication by $(1+C)^{3}$.
+\end{proof}
+
+\begin{remark}[The two routes are one route]
+\label{rem:notindependent}
+The coincidence $\Ccrit=h_{*}$ in \eqref{eq:Ccrit} is algebraic, not
+evidential. Both computations impose the same condition $a=b^{3}$ on the same
+partition and differ only in which coordinate is solved for; the compactness
+polynomial $C^{3}+2C^{2}+C-1$ and the altitude polynomial
+$h^{3}+2h^{2}+h-1$ are the same polynomial. This equality is therefore not an
+independent cross-check, and it is recorded here so that it is not mistaken
+for one \cite{CubicThreshold}.
+\end{remark}
+
+\subsection{The division of labor in this example}
+
+\begin{center}
+\begin{tabular}{@{}ll@{}}
+\toprule
+Ingredient & Supplied by \\
+\midrule
+Two sectors exhausting the effective source & the exact rearrangement
+\eqref{eq:rearrange} \\
+The sector ratio $a/b=C$ & general relativity, via \eqref{eq:scaling} \\
+The altitude $h=\sqrt{ab}$ & constraint geometry \\
+The intrinsic condition $h=a/b$, i.e.\ $a=b^{3}$ & constraint geometry \\
+The cubic $C(1+C)^{2}=1$ and its root & the intersection of the two \\
+Any physical meaning of that root & neither, so far \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{interpretation}
+General relativity supplies the physical sector ratio. Constraint geometry
+supplies the intrinsic consistency condition. Their intersection supplies a
+cubic compactness diagnostic --- a candidate diagnostic, with a definite
+number attached, and nothing more until the embedding is independently
+justified and the diagnostic tested.
+\end{interpretation}
+
+\begin{remark}[Explicit disclaimers for this section]
+Constraint geometry does not derive the Einstein field equations; the
+uniqueness of $G_{\mu\nu}+\Lambda g_{\mu\nu}$ is a separate matter with a
+separate proof \cite{Lovelock71,Wald}. The cubic \eqref{eq:cubicC} is not a
+universal law of gravity. And $\Ccrit$ is not a point at which nonlinear
+gravity begins: the higher-order sector is nonzero for every $C>0$ and grows
+smoothly, so no onset is asserted. What \eqref{eq:cubicC} locates is where a
+particular relational condition on a particular normalized decomposition is
+met.
+
+As to accuracy: the post-Newtonian expansion is reliable during the weak-field,
+slow-motion inspiral and progressively loses accuracy as a binary approaches the
+strong-field merger regime, where resummation methods or numerical-relativity
+calculations become necessary \cite{Blanchet2024}. That statement is
+qualitative, concerns the orbital parameter rather than the structural
+compactness of \eqref{eq:compactness} (Remark~\ref{rem:structural}), and
+attaches no numerical onset to any value. Nothing here asserts that accuracy
+degrades near $\Ccrit$, and no such claim should be read into
+\eqref{eq:cubicC}: establishing one would require a dedicated study specifying
+the gauge, the waveform family, the post-Newtonian order, and the error measure
+against which degradation is defined. Note also that ``loses accuracy'' is the
+defensible claim and is weaker than ``diverges'': the post-Newtonian series is
+an asymptotic expansion whose convergence properties are not established, so
+what degrades is truncation accuracy at fixed order.
+\end{remark}
+
+% =====================================================================
+\section{Intrinsic Marker Versus Physical Realization}
+\label{sec:marker}
+% =====================================================================
+
+This section states the conceptual distinction that the rest of the note
+depends on.
+
+The intrinsic marker is fixed in partition space:
+\begin{equation}
+a=b^{3},\qquad a+b=1,
+\qquad\text{hence}\qquad
+r_{*}=\frac{a_{*}}{b_{*}}=\psi^{-2}=0.465571\ldots
+\label{eq:rstar}
+\end{equation}
+Its physical realization, however, is the solution of
+\begin{equation}
+F(X_{*})=r_{*} ,
+\label{eq:realize}
+\end{equation}
+which depends on the embedding. The geometry does not move. The physical
+coordinate $X_{*}$ moves whenever $F$ changes.
+
+Three distinct objects must therefore be kept apart:
+
+\begin{enumerate}[label=\textbf{(\arabic*)},leftmargin=*]
+\item \textbf{The intrinsic geometric marker.} The locus $a=b^{3}$ on the
+partition, with its fixed values $(a_{*},h_{*},b_{*})=(\psi^{-3},\psi^{-2},\psi^{-1})$.
+Exact, domain-free, and carrying no physical content
+(Remark~\ref{rem:landmarkstatus}).
+
+\item \textbf{The domain-specific embedding.} The map $a/b=F(X)$, which
+converts the marker into a value $X_{*}$ of a physical variable via
+\eqref{eq:realize}. This is where all the physics of the identification lives,
+and where all the freedom to be wrong lives.
+
+\item \textbf{The physical interpretation.} A claim that $X_{*}$ names
+something --- a transition, a bound, a degradation of an approximation, an
+observable clustering. This requires evidence beyond (1) and (2).
+\end{enumerate}
+
+\begin{observation}[The threshold is as firm as the embedding]
+\label{obs:firmness}
+Suppose the sector ratio is more accurately $a/b=\alpha C$ for some
+dimensionless $\alpha$ not fixed by \eqref{eq:scaling}, which is an
+order-of-magnitude statement between gauge-dependent norms. Then
+\eqref{eq:realize} gives $C_{*}=r_{*}/\alpha$, and the physical threshold
+scales inversely with a quantity the derivation never pinned down. More
+generally, for $F(C)=\alpha C^{n}$ one obtains
+$C_{*}=(r_{*}/\alpha)^{1/n}$. The intrinsic marker is exact; the number
+$0.4656$ is exact \emph{as a partition ratio}; the compactness value inherits
+the full indeterminacy of the normalization of \eqref{eq:scaling}.
+\end{observation}
+
+\begin{safeguard}[The manufacturing objection]
+\label{safe:manufacture}
+Given any target value $X_{0}$ and the fixed $r_{*}$, the embedding
+$F(X)=r_{*}X/X_{0}$ places the landmark exactly at $X_{0}$. Therefore no
+agreement between a partition landmark and an observed value is evidence for
+anything unless $F$ was fixed, in full, by domain physics before the
+comparison was made. This is the single most important safeguard in the
+programme, and it is the reason the perturbative-GR case is the primary example:
+there, $F(C)=C$ follows from an operator estimate that exists independently of
+any partition consideration --- up to precisely the normalization ambiguity of
+Observation~\ref{obs:firmness}, which must be reported rather than suppressed.
+\end{safeguard}
+
+% =====================================================================
+\section{Relation to the Two-Face and Effective-Potential Frameworks}
+\label{sec:priorframeworks}
+% =====================================================================
+
+The architecture \eqref{eq:architecture} is a refinement of an earlier
+intuition, not a replacement for it. The progression can be described in three
+stages.
+
+\paragraph{Stage 1: the Two-Face Problem \cite{TwoFace}.}
+Binary partition geometry was introduced as a translation framework. The same
+constrained state admits a bounded description in $\chi$, a hyperbolic
+description in $\xi=\operatorname{arctanh}\chi$, and a radial or response
+description in $\Rresp=1/(1-\chi^{2})$; apparent conflicts between
+descriptions of a system can be conflicts between faces rather than between
+physical claims. In the present language, Stage 1 established that the
+constraint layer possesses a well-defined coordinate vocabulary, and that
+divergences in one face may be boundary effects rather than physical
+singularities.
+
+\paragraph{Stage 2: effective potentials on the partition manifold \cite{EffPot}.}
+The Fisher metric of the binary partition,
+\begin{equation}
+ds_{F}^{2}=\frac{da^{2}}{a}+\frac{db^{2}}{b}
+=\frac{d\chi^{2}}{1-\chi^{2}}
+=\Rresp\,d\chi^{2},
+\label{eq:fisher}
+\end{equation}
+was proposed as a universal kinetic skeleton, with a domain potential
+$V_{\mathrm{domain}}(\chi)$ carrying the contextual dynamics. The same split
+appears in the first-integral extraction as
+\begin{equation}
+V^{\lin}_{\mathrm{eff}}(\chi)
+= -\tfrac12\,\frac{(\partial_{x}\chi)^{2}}{1-\chi^{2}}
+= -\tfrac12\,
+\frac{\text{contextual numerator}}{\text{universal denominator}} ,
+\label{eq:numden}
+\end{equation}
+which is the dynamical instance of the architecture:
+\begin{equation}
+\begin{gathered}
+\text{universal Fisher denominator}\;+\;\text{contextual numerator}\\
+\longleftrightarrow\\
+\text{universal constraint structure}\;+\;\text{domain-specific dynamics}.
+\end{gathered}
+\end{equation}
+Stage 2 also established the discipline that the present note inherits: applied
+to a single known trajectory, the extraction \eqref{eq:numden} is tautological,
+because the free function $V$ has as many degrees of freedom as the data.
+Single-trajectory extraction is therefore a Tier-1 normal form and acquires
+falsifiable status only after an over-determination test --- a shared-$V$ family
+test with a reported residual, an independently determined $V$ that then
+predicts the trajectory, cross-domain recurrence under a pre-declared
+normalization, or genuine compression \cite{EffPot}.
+
+\paragraph{Stage 3: perturbative GR and the intrinsic cubic
+\cite{CubicThreshold,IntrinsicCubic,ReverseThales}.}
+The constraint layer was shown to supply not only coordinates and a kinetic
+skeleton but also intrinsic relational \emph{landmarks} --- loci fixed by the
+constraint alone --- with general relativity supplying an embedding under which
+one such landmark acquires a compactness reading.
+
+\begin{interpretation}[Refinement, not abandonment]
+The original intuition was that a single constrained geometry underlies
+structurally similar relations across domains. That intuition survives, in a
+sharpened form: what recurs is the \emph{state space}, its coordinate
+vocabulary, and its landmark structure --- not the dynamics, not the
+mechanisms, and not the physical meanings. The mature formulation is:
+
+\begin{quote}
+\emph{The partition framework does not generate domain physics. It provides a
+common constrained state space, a coordinate language, and a set of intrinsic
+relational landmarks against which domain-specific dynamics can be organized
+and tested.}
+\end{quote}
+\end{interpretation}
+
+\begin{remark}[A coordinate caution carried forward]
+The flat coordinate of the Fisher metric \eqref{eq:fisher} is $u=\arcsin\chi$,
+not the rapidity $\xi$, which is flat for the distinct hyperbolic metric
+$d\chi^{2}/(1-\chi^{2})^{2}$. Writing a Fisher-denominator kinetic term in $\xi$
+therefore leaves a residual $\operatorname{sech}^{2}\xi$ weight that is a
+signature of the metric--coordinate pairing and not of domain physics
+\cite{EffPot}. Comparisons across domains must declare the pairing.
+\end{remark}
+
+% =====================================================================
+\section{Cross-Domain Illustrations}
+\label{sec:crossdomain}
+% =====================================================================
+
+These illustrations are deliberately brief. Their purpose is to show that the
+same intrinsic marker occurs in each partition while its physical status
+differs completely --- which is exactly the point of the architecture. The
+perturbative-GR case of \S\ref{sec:gr} remains the central example.
+
+\subsection{Flat $\Lambda$CDM: two landmarks, failing in opposite ways}
+\label{sec:lcdm}
+
+In a flat cosmology the density parameters exhaust unity, so the partition is
+genuine rather than imposed: the closure is a constraint of the Friedmann
+system, not a normalization of convenience. In the matter-plus-$\Lambda$ regime
+where radiation is negligible, take
+\begin{equation}
+a=\Omega_{m},\qquad b=\Omega_{\Lambda},\qquad a+b=1 ,
+\label{eq:lcdmassign}
+\end{equation}
+so that the partition geometry organizes the coupling
+$\mu=ab=\Omega_{m}\Omega_{\Lambda}$, the asymmetry
+$\chi=\Omega_{m}-\Omega_{\Lambda}$, and the response $R=1/(1-\chi^{2})$.
+
+\begin{remark}[Which sector is $a$, and why it matters]
+\label{rem:ordering}
+The condition $a=b^{3}$ is not symmetric under exchange of the sectors, whereas
+$h=\sqrt{ab}$, $\chi^{2}$ and $R$ are. Identifying a landmark by its response
+value therefore specifies an unordered \emph{pair} of states: $R=1.15337\ldots$
+is attained both where $\Omega_{m}=\Omega_{\Lambda}^{3}$ and where
+$\Omega_{\Lambda}=\Omega_{m}^{3}$, and these are different epochs. Only the
+ordered condition selects a branch, and only domain physics can order the
+sectors. The assignment \eqref{eq:lcdmassign} is the one under which the
+occupied state is the marker: matter is at present the minority sector, with
+$\Omega_{m}\approx 0.317\approx a_{*}$, which is also the orientation of the
+general-relativity embedding of \S\ref{sec:gr}, where the higher-order sector
+is the minority channel. It additionally aligns the sign convention, since
+$\chi_{*}<0$ in Proposition~\ref{prop:crossing} and
+$\chi_{\mathrm{today}}=\Omega_{m}-\Omega_{\Lambda}<0$. Reversing the assignment
+moves the marker to a substantially earlier epoch and flips the sign of $\chi$;
+nothing in the constraint geometry chooses between the two orderings.
+\end{remark}
+
+The embedding is supplied by the conservation laws rather than chosen. With
+scale factor $s$, matter dilution $\rho_{m}\propto s^{-3}$ and
+$\rho_{\Lambda}$ constant give
+\begin{equation}
+\frac{a}{b}=F(s)=\frac{\Omega_{m,0}}{\Omega_{\Lambda,0}}\,s^{-3} ,
+\label{eq:lcdmembed}
+\end{equation}
+and, more generally, the rapidity
+$\xi_{\mathrm{DE}}=\tfrac12\ln(\rho_{\mathrm{DE}}/\rho_{m})$ obeys
+\begin{equation}
+\frac{d\xi_{\mathrm{DE}}}{d\ln s}
+=-\tfrac{3}{2}\,w_{\mathrm{DE}}(s) ,
+\label{eq:rapidityw}
+\end{equation}
+which follows from the two separate conservation laws alone --- $w_{m}=0$ and
+$\rho_{\mathrm{DE}}'/\rho_{\mathrm{DE}}=-3(1+w_{\mathrm{DE}})$ --- and requires
+neither flatness nor two-component closure \cite{PartitionFlow}. This is an
+embedding of the stronger kind: it is the independent-determination route of
+\cite{EffPot}, with $\Lambda$CDM the case $w_{\mathrm{DE}}=-1$, for which the
+flow is a uniform translation in rapidity at rate $3/2$.
+
+Two landmarks are now available on this trajectory, and they fail in opposite
+ways.
+
+\paragraph{(a) A landmark with a mechanism and no occupancy.}
+The domain flow supplies its own landmark. Writing $J=\mu|\chi|$, flat
+$\Lambda$CDM satisfies exactly
+\begin{equation}
+\frac{d\Omega_{m}}{d\ln s}=-3\mu,
+\qquad
+\frac{d^{2}\Omega_{m}}{(d\ln s)^{2}}=9\mu\chi=9J\operatorname{sgn}\chi ,
+\label{eq:flowid}
+\end{equation}
+so the coupling is the velocity of the matter-fraction flow and the
+coupling--asymmetry product is its acceleration; the acceleration extremum lies
+at $|\chi|=1/\sqrt3$, i.e.\ at $R_{J}=3/2$, equivalently at the state where
+$d^{3}\Omega_{m}/(d\ln s)^{3}$ vanishes \cite{PartitionFlow}. This landmark is
+\emph{derived from the domain mechanism} and therefore means something about the
+flow. The present epoch is not there: $R_{J}$ is attained at $z\approx 1.0$ and
+$z\approx -0.17$, some twenty standard deviations from today in the
+cosmological parameters \cite{PartitionFlow,Planck18}.
+
+\paragraph{(b) A landmark with occupancy and no mechanism.}
+The intrinsic marker $a=b^{3}$ is realized at $F(s_{*})=r_{*}$, i.e.\ at
+\begin{equation}
+s_{*}=\Bigl(\frac{\Omega_{m,0}}{r_{*}\,\Omega_{\Lambda,0}}\Bigr)^{1/3} ,
+\end{equation}
+which for concordance parameters falls at $z\approx 0.002$ --- effectively now,
+with $R_{*}=1.15337$ against a present-day $R\approx 1.156$
+\cite{PartitionFlow,Planck18}. Here occupancy is excellent and the mechanism is
+absent; and in this domain the absence can be \emph{proved} rather than merely
+conceded. Using $d\chi/d\ln s=\tfrac32(1-\chi^{2})$, the flow admits an exact
+Fisher-gradient representation
+\begin{equation}
+\frac{d\chi}{d\ln s}=-(1-\chi^{2})\,U'(\chi),
+\qquad
+U(\chi)=-\tfrac{3}{2}\chi ,
+\label{eq:linearU}
+\end{equation}
+in which the potential is linear, so $U'\equiv-\tfrac32\neq 0$ everywhere. The
+flow therefore has no interior critical point at all: its only fixed points are
+the simplex edges $\chi=\pm1$, and at the cubic state
+$d\chi/d\ln s=\tfrac32(1-\chi_{*}^{2})\approx 1.30\neq 0$ \cite{PartitionFlow}.
+The universe passes through the cubic state at ordinary speed. A mechanism that
+selected it would require a domain potential with an interior minimum there,
+which is not $\Lambda$CDM.
+
+\begin{interpretation}[The sharpest form of the thesis]
+\label{int:sharpest}
+Neither cosmological landmark is a diagnostic, and they miss for opposite
+reasons. Landmark (a) is derived from the domain and unoccupied; landmark (b)
+is intrinsic to the constraint geometry and occupied but provably mechanism-free.
+Meaning and occupancy are supplied by different layers, and neither implies the
+other. A framework that reported only (b) would look like a success; a
+framework that reported only (a) would look like a mechanism. Reporting both is
+what makes the architecture of \eqref{eq:architecture} visible.
+\end{interpretation}
+
+\subsection{The effective-potential framework}
+
+Under a pullback $\chi=\chi_{\mathrm{domain}}(x)$ the same split reappears
+dynamically as \eqref{eq:numden}: the denominator $1-\chi^{2}$ is contributed
+by the chart, and the numerator $(\partial_{x}\chi)^{2}$ by the domain approach
+law. Shared boundary divergence as $|\chi|\to 1$ is therefore a shared response
+geometry and not shared physics; two systems can share the boundary class while
+occupying different numerator classes \cite{EffPot}. Single-trajectory
+extraction remains a Tier-1 normal form unless it passes an over-determination
+test, as recalled in \S\ref{sec:priorframeworks}.
+
+\subsection{Newtonian two-body geometry}
+
+Fixed total mass gives a genuine partition. With $c=m_{1}+m_{2}=M$ and
+segments $m_{1},m_{2}$, the altitude theorem gives $h^{2}=m_{1}m_{2}$ exactly,
+so the gravitational force and potential energy are altitude-squared
+quantities, $F_{\mathrm{grav}}=Gh^{2}/r^{2}$ and $U=-Gh^{2}/r$, while the
+reduced mass is $\mu=h^{2}/c$ and the symmetric mass ratio is $\nu=h^{2}/c^{2}$
+\cite{Newtonian2Body}. In normalized form $a=m_{1}/M$, $b=m_{2}/M$ the
+embedding is the mass ratio itself, $F(q)=q$ with $q=m_{1}/m_{2}$, so the
+intrinsic marker is realized at the single mass ratio $q_{*}=r_{*}$, i.e.\
+$m_{2}/m_{1}=1/r_{*}=\psi^{2}=2.1479\ldots$
+
+This is the most instructive of the three illustrations precisely because
+nothing happens there. Newtonian mechanics supplies the physical laws and the
+observables; it assigns no distinguished role to that mass ratio. The intrinsic
+marker exists in the partition, is exactly located, and is physically empty in
+this domain. Meanwhile the same geometry does useful organizational work
+elsewhere in the same system: it exhibits the coupling--timing asymmetry
+whereby force is altitude-governed and Kepler timing is hypotenuse-governed,
+which is an exact re-expression of standard relations and not a new result
+\cite{Newtonian2Body}.
+
+\begin{observation}[Landmark availability versus landmark realization]
+Across the illustrations the marker $a=b^{3}$ is available in every case and
+means something different in each: a candidate diagnostic under a schematic
+operator embedding (\S\ref{sec:gr}); an occupied but provably mechanism-free
+transit state under an independently derived evolution law
+(\S\ref{sec:lcdm}(b)); and nothing at all under a trivially exact embedding
+(two-body masses). Alongside it, $\Lambda$CDM carries a second landmark that is
+mechanism-bearing and unoccupied (\S\ref{sec:lcdm}(a)). Availability is
+geometric; realization is physical; and the two can be present separately.
+\end{observation}
+
+% =====================================================================
+\section{A Protocol, and its Safeguards}
+\label{sec:protocol}
+% =====================================================================
+
+The following is a conservative working protocol. Steps 1--4 are the
+constructive part; step 5 is what makes the result scientific rather than
+decorative.
+
+\begin{enumerate}[label=\textbf{Step \arabic*.},leftmargin=*,itemsep=4pt]
+\item \textbf{Identify a genuine constrained decomposition.} Locate two
+sectors that exhaust a conserved total, an exact operator decomposition, or a
+definitionally complete budget, for reasons internal to the domain. Reject
+partitions created by dividing two unrelated quantities by their sum.
+
+\item \textbf{Normalize to $a+b=1$.} Record the normalization explicitly,
+including any gauge, slicing, or norm choice on which it depends.
+
+\item \textbf{Derive the domain map.} Obtain $a/b=F(X)$ from domain physics ---
+a conservation law, an evolution equation, an operator estimate, an equation of
+state --- and state which parts of $F$ are derived and which are conventional.
+In particular, report any undetermined overall normalization, since by
+Observation~\ref{obs:firmness} it propagates directly into the location of any
+landmark.
+
+\item \textbf{Evaluate the landmarks.} Solve $F(X_{*})=r_{*}$ for the intrinsic
+marker of interest, and ask whether $X_{*}$ is a physically meaningful
+coordinate: does the domain independently distinguish it? Is it inside the
+physically admissible range? Does it correspond to any observable change?
+
+\item \textbf{Require independent justification or falsifiable testing of the
+embedding.} An arbitrary choice of $F$ can manufacture any desired threshold
+(Safeguard~\ref{safe:manufacture}). The embedding must therefore either follow
+from independent domain physics, or the resulting diagnostic must make a
+prediction that could fail: a held-out prediction, a collapse of a family of
+trajectories onto one structure with a reported residual, a cross-domain
+recurrence under a pre-declared normalization, or a compression of a complex
+description into a shorter one \cite{EffPot}.
+\end{enumerate}
+
+\subsection{Additional safeguards}
+
+\begin{safeguard}[Universality trap]
+Many systems normalize to $a+b=1$. Shared arithmetic is not shared physics, and
+the recurrence of the partition across domains is expected rather than
+informative.
+\end{safeguard}
+
+\begin{safeguard}[Chart contributions]
+Divergences and boundary behaviour contributed by the coordinates ---
+$\Rresp\to\infty$ as $|\chi|\to1$, the Fisher denominator, the response face
+generally --- must not be reported as domain findings.
+\end{safeguard}
+
+\begin{safeguard}[Algebraic identities are not cross-checks]
+When two computations impose the same condition on the same partition and
+differ only in which coordinate is solved for, their agreement is a tautology
+(Remark~\ref{rem:notindependent}). Cross-checks must involve independent
+inputs.
+\end{safeguard}
+
+\begin{safeguard}[Admissible range]
+A partition coordinate normalized to $[0,1]$ need not have a physically
+admissible range that large. Any landmark must be located relative to the
+domain's own bounds, and a landmark outside them is not a diagnostic.
+\end{safeguard}
+
+\begin{safeguard}[Landmark crowding]
+\label{safe:crowding}
+Before reporting a landmark as occupied, check whether its neighbourhood
+contains generic constants within the measurement error of the domain. Near the
+cubic value the interval of width comparable to current cosmological precision
+contains at least three unrelated numbers: the cubic root
+$b_{*}=0.682328$; the Gaussian one-sigma mass
+$\operatorname{erf}(1/\sqrt2)=0.682689$, a generic aggregation landmark with no
+domain-specific content \cite{NormNulls}; and the present-day
+$\Omega_{\Lambda,0}\approx 0.6835$ with an uncertainty of order $0.007$
+\cite{Planck18,PartitionFlow}. The separations are an order of magnitude below
+the uncertainty, so proximity cannot discriminate among them and agreement with
+any one of them is not structural. The safeguard is general: a landmark is only
+as informative as its neighbourhood is sparse.
+\end{safeguard}
+
+\begin{safeguard}[Information-content check]
+\label{safe:infocontent}
+Before testing whether a partition coordinate organizes an observable, check
+whether it can. If every partition coordinate is a deterministic invertible
+function of one domain quantity, then all of them carry exactly the information
+already in that quantity and none adds a predictive degree of freedom. In flat
+$\Lambda$CDM, $\mu$, $\chi$, $R$, $J$ and $\xi$ are all functions of
+$\Omega_{m}(z)$ alone, so any apparent value added by a higher-order coordinate
+over a lower-order one signals leakage --- residual dependence re-entering
+through a nonlinear reparameterization --- rather than new content. Genuine
+content requires leaving the regime in which the reduction holds; for the
+cosmological case that means $w_{\mathrm{DE}}\neq-1$, where the rapidity
+curvature $d^{2}\xi/(d\ln s)^{2}=-\tfrac32 w_{\mathrm{DE}}'$ is nonzero
+\cite{PartitionFlow}. This is a screen to be applied before a test is run, not
+an explanation offered after one fails.
+\end{safeguard}
+
+\begin{safeguard}[Order and level]
+Conditions relating an amplitude-level quantity such as $h$ to a ratio-level
+quantity such as $a/b$ (Remark~\ref{rem:levels}) must be labeled as
+partition-intrinsic relational conditions rather than physical balance laws.
+\end{safeguard}
+
+% =====================================================================
+\section{Epistemic Tiers}
+\label{sec:tiers}
+% =====================================================================
+
+\paragraph{Tier 1 --- exact mathematics.}
+\begin{itemize}[leftmargin=*,itemsep=1pt]
+\item the constraint $a+b=1$ with $a,b>0$;
+\item the altitude $h=\sqrt{ab}$ and the identity $4h^{2}+\chi^{2}=1$;
+\item the response and rapidity coordinates and all coordinate transformations
+      among the coordinates $(a,b,h,\chi,\Rresp,\xi)$;
+\item the intrinsic crossing $h=a/b$, its equivalence to $a=b^{3}$, its
+      uniqueness, and the sign law of Lemma~\ref{lem:sign};
+\item the resulting cubic relations $b^{3}+b-1=0$ and $h^{3}+2h^{2}+h-1=0$,
+      the supergolden coordinates
+      $(a_{*},h_{*},b_{*})=(\psi^{-3},\psi^{-2},\psi^{-1})$, and the algebraic
+      identity of the compactness and altitude polynomials;
+\item the algebraic consequence \eqref{eq:cubicC} of imposing $a=b^{3}$ under
+      the embedding $a/b=C$;
+\item the Fisher metric \eqref{eq:fisher} and the numerator/denominator split
+      \eqref{eq:numden}.
+\end{itemize}
+
+\paragraph{Tier 2 --- domain diagnostic.}
+\begin{itemize}[leftmargin=*,itemsep=1pt]
+\item an independently motivated identification of the two physical sectors,
+      including the reason they exhaust a total;
+\item a derived map $a/b=F(X)$, with its conventional content declared;
+\item the physical location $X_{*}$ of a geometric landmark, reported together
+      with its sensitivity to the normalization of $F$;
+\item a falsifiable test: a held-out prediction, a family collapse with a
+      reported residual, an independently determined structure that then
+      predicts a trajectory, or cross-domain recurrence under pre-declared
+      normalization.
+\end{itemize}
+Nothing in the perturbative-GR example reaches Tier 2 in this note: the
+embedding \eqref{eq:grembed} is schematic (Observation~\ref{obs:firmness}) and
+no test is performed here.
+
+\paragraph{Tier 3 --- speculative interpretation.}
+\begin{itemize}[leftmargin=*,itemsep=1pt]
+\item claims of a universal mechanism behind the recurrence of the partition;
+\item claims that the intrinsic cubic is fundamental, or that its root is a
+      constant of nature;
+\item claims that distinct physical domains share dynamics because they share
+      partition geometry;
+\item claims that a landmark marks a sharp physical onset.
+\end{itemize}
+
+% =====================================================================
+\section{Discussion}
+\label{sec:discussion}
+% =====================================================================
+
+Three points deserve emphasis.
+
+First, the architecture explains why the programme's strongest and weakest
+results look superficially alike. Both consist of a partition, an embedding,
+and a landmark. They differ in exactly one place: whether the embedding was
+derived or chosen. The perturbative-GR case is the strongest available because
+the decomposition \eqref{eq:rearrange} is exact and the ratio
+\eqref{eq:scaling} pre-exists the partition; it remains short of a diagnostic
+because \eqref{eq:scaling} is schematic. The two-body case is the weakest not
+because its embedding is doubtful --- it is exact --- but because the domain
+assigns the landmark no role.
+
+Second, the architecture makes the failure modes explicit and separable. If a
+partition is not genuine, step~1 fails and nothing downstream can be repaired.
+If the embedding is chosen rather than derived, step~5 fails and any numerical
+agreement is manufactured. If the landmark is real and the embedding is derived
+but the domain distinguishes nothing there, the result is a transit marker: a
+correct, exactly located, physically empty statement. These are three different
+negative results, and distinguishing them is more useful than aggregating them
+into a single verdict.
+
+Third, the cases now on the table separate cleanly along these axes.
+
+\begin{center}
+\small
+\begin{tabular}{@{}p{3.0cm}p{3.4cm}p{3.2cm}p{3.0cm}@{}}
+\toprule
+Case & Embedding & Domain role for landmark & Occupancy \\
+\midrule
+Perturbative GR, $\Ccrit$ (\S\ref{sec:gr})
+& schematic: $a/b\sim C$ up to an unpinned normalization
+  (Obs.~\ref{obs:firmness})
+& not established
+& untested here \\
+$\Lambda$CDM, $R_{J}$ (\S\ref{sec:lcdm}(a))
+& derived from the conservation laws
+& yes: extremum of the flow acceleration
+& no ($z\approx1.0$, $-0.17$) \\
+$\Lambda$CDM, cubic (\S\ref{sec:lcdm}(b))
+& derived from the conservation laws
+& provably none: linear $U(\chi)$
+& yes ($z\approx0.002$) \\
+Two-body, cubic (\S\ref{sec:crossdomain})
+& exact: $F(q)=q$
+& none
+& not applicable \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Fourth, a comparison drawn in the earlier cosmological work should be read the
+other way round. That work contrasted the linear cosmological potential
+\eqref{eq:linearU} with a compactness flow in which the cubic is an attracting
+state, which invites the reading that $\Lambda$CDM is the weaker case. Under the
+present architecture it is the stronger one. The cosmological embedding is
+derived --- \eqref{eq:rapidityw} follows from the conservation laws alone --- and
+it returns a clean, provable negative. The compactness flow's potential, by
+contrast, is a normal form obtained by quadrature and carries no information
+beyond the sign field of the flow; its critical point is inherited from the
+partition geometry rather than derived from general relativity, and the current
+form of that result asserts robustness across a class of positive prefactors
+rather than selection \cite{AltitudeRelax}. The two cases therefore divide the
+labor differently: $\Lambda$CDM has the better embedding and an empty landmark,
+while perturbative GR has the more suggestive landmark and a schematic embedding
+with an unpinned normalization. Neither is a diagnostic, and the useful
+statement is the pair rather than either one alone.
+
+Fifth, negative results of the third kind are informative in the same way that
+a failed family test is informative in the dynamical setting \cite{EffPot}. A
+domain in which every intrinsic landmark is a transit marker is a domain whose
+physics is not organized by its partition structure; that is a fact about the
+domain, stated in a common language, and it is worth recording.
+
+What the framework offers, then, is not derivation but organization with
+declared seams: a fixed constrained state space, a coordinate vocabulary that
+translates between bounded, hyperbolic and response descriptions, a
+short list of exactly located intrinsic landmarks, and a protocol that makes
+the physical content --- and the burden of proof --- reside entirely in the
+embedding.
+
+% =====================================================================
+\section{Conclusion}
+\label{sec:conclusion}
+% =====================================================================
+
+A conserved two-sector system may admit a universal partition geometry, but
+that geometry does not determine the system's dynamics. It supplies invariant
+coordinates, coupling measures, asymmetry measures, and intrinsic relational
+landmarks. Domain physics supplies the sectors, the embedding, the evolution,
+and the empirical meaning. A physical diagnostic emerges only where these two
+layers intersect under an independently justified map.
+
+This is also why the original construction required both ingredients at once,
+and why neither could have been dispensed with. The Einstein equations grounded
+the partition in a physically meaningful linear--nonlinear decomposition, while
+the Thales semicircle supplied the intrinsic relational condition that selected
+the cubic landmark. Without the field equations there would have been no reason
+to regard the two sectors as a genuine partition of anything; without the
+semicircle there would have been no condition to impose on it, and the operator
+scaling alone yields only the trivial bound $C<1$. The cubic diagnostic is the
+intersection, and it is no firmer than the weaker of the two ingredients --- at
+present, the schematic normalization of the sector ratio.
+
+% =====================================================================
+\section{Relation to Prior Work}
+\label{sec:priorwork}
+% =====================================================================
+
+This note synthesizes and clarifies results already developed in earlier work;
+it introduces no new physical law, no new theorem, and no new empirical claim.
+Specifically:
+
+\begin{itemize}[leftmargin=*]
+\item The coordinate vocabulary and the multi-face translation between bounded,
+hyperbolic and response descriptions were developed in
+\cite{TwoFace}.
+
+\item The Fisher kinetic skeleton, the universal-denominator /
+contextual-numerator split, the normal-form status of single-trajectory
+extraction, and the over-determination routes cited in
+\S\ref{sec:priorframeworks} and \S\ref{sec:protocol} were developed in
+\cite{EffPot}.
+
+\item The altitude--ratio crossing, its equivalence to $a=b^{3}$, the
+uniqueness of the interior solution, and the supergolden coordinates of
+Proposition~\ref{prop:crossing} were established in
+\cite{IntrinsicCubic}.
+
+\item The compactness embedding $a/b=C$, the operator rearrangement
+\eqref{eq:rearrange}, and the cubic \eqref{eq:cubicC} were developed in
+\cite{CubicThreshold}; the transversality of the crossing and the
+prefactor-independence of the associated relaxation class, together with the
+recalibration of language from ``dynamically selected'' to ``attracting
+equilibrium of a modelling class,'' also appear
+there.
+
+\item The similarity-composition reading of the structural content of the field
+equations, and the explicit statement that the field equations are not derived
+from the geometry, appear in
+\cite{ReverseThales}.
+
+\item The exact flat-$\Lambda$CDM flow identities \eqref{eq:flowid}, the
+landmark $R_{J}=3/2$, the rapidity identity \eqref{eq:rapidityw}, the
+Fisher-gradient representation \eqref{eq:linearU} with its linear potential, and
+the numerical redshift placement of all cosmological landmarks were established
+in \cite{PartitionFlow}. The present note adds only the reading of that paper's
+two landmarks as opposite failure modes
+(Interpretation~\ref{int:sharpest}), and the ordering correction of
+Remark~\ref{rem:ordering}.
+
+\item The numerical crowding of the region near $0.68$ was recorded in
+\cite{NormNulls}; Safeguard~\ref{safe:crowding} generalizes it beyond
+cosmology.
+
+\item \textbf{Citation hygiene.} The June 2026 note \cite{DynSelSuperseded} is
+superseded by \cite{AltitudeRelax}, which withdraws the $C(1-C)$ prefactor and
+replaces ``dynamically selected'' with ``attracting equilibrium of the
+imbalance-driven class.'' Forward citations should point to the revised note, so
+that the withdrawn artifacts are not carried into later
+work.
+
+\item \textbf{Second hygiene item.} The Blanchet living review has been
+superseded by its current edition \cite{Blanchet2024}; earlier notes in this
+programme cite the 2014 edition, and forward citations should be repointed. More
+importantly, one of those notes attributes to that review a numerical statement
+--- that post-Newtonian accuracy degrades for compactness above roughly
+$0.4$--$0.5$ --- which the review does not supply; the source supports the
+qualitative loss of accuracy approaching merger and no threshold value. That
+attribution should be weakened to the qualitative form or
+removed.
+
+\item The mass-partition organization of Newtonian two-body quantities, the
+altitude theorem $h^{2}=m_{1}m_{2}$, and the coupling--timing asymmetry were
+developed in \cite{Newtonian2Body}.
+\end{itemize}
+
+The contribution of the present note is organizational: it names the two layers,
+states the division of labor \eqref{eq:architecture}, separates the intrinsic
+marker from its embedding and its interpretation (\S\ref{sec:marker}), and
+records the safeguard that an arbitrary embedding can manufacture any threshold
+(Safeguard~\ref{safe:manufacture}). Where earlier work stated these points
+locally, in the context of a particular calculation, they are here stated once,
+generally, and in a form that applies before the next calculation is begun.
+
+% =====================================================================
+\section*{Acknowledgment}
+% =====================================================================
+\addcontentsline{toc}{section}{Acknowledgment}
+The author acknowledges the use of artificial-intelligence tools for editorial
+assistance, structural organization, algebraic checking, and consistency
+review. All conceptual development, research direction, interpretation, and
+final responsibility for the content belong to the author.
+
+% =====================================================================
+\begin{thebibliography}{99}
+% ---------------------------------------------------------------------
+% Author's own work.
+% ---------------------------------------------------------------------
+\bibitem{TwoFace}
+E. De Jes\'us, \emph{The Two-Face Problem: A Practitioner's Guide to Bridging
+Inconsistencies Across Physics}, Zenodo (2026).
+\href{https://doi.org/10.5281/zenodo.20221967}{DOI:10.5281/zenodo.20221967}.
+
+\bibitem{EffPot}
+E. De Jes\'us, \emph{Two-Face Series: Effective Potentials on the Binary
+Partition Manifold}, Zenodo (2026).
+\href{https://doi.org/10.5281/zenodo.21430864}{DOI:10.5281/zenodo.21430864}.
+
+\bibitem{IntrinsicCubic}
+E. De Jes\'us, \emph{The Partition-Intrinsic Cubic: The Unique Altitude--Ratio
+Crossing, Supergolden Coordinates, and Algebraic Evaluation on the Thales
+Partition Manifold}, Version 3, Zenodo (2026).
+\href{https://doi.org/10.5281/zenodo.21543445}{DOI:10.5281/zenodo.21543445}.
+
+\bibitem{CubicThreshold}
+E. De Jes\'us, \emph{The Cubic Compactness Threshold in Perturbative General
+Relativity: A Conservative Reverse-Thales Diagnostic of Linear--Nonlinear
+Operator Balance}, Zenodo (2026).
+\href{https://doi.org/10.5281/zenodo.20564050}{DOI:10.5281/zenodo.20564050}.
+
+\bibitem{ReverseThales}
+E. De Jes\'us, \emph{Iterated Similarity Composition and the Structure of the
+Einstein Field Equations: A Reverse Thales Construction}, Zenodo (2026).
+
+\bibitem{PartitionFlow}
+E. De Jes\'us, \emph{Matter--Dark-Energy Balance as a Partition Flow: Velocity,
+Acceleration, and Constant Rapidity in Flat $\Lambda$CDM}, Zenodo (2026).
+
+\bibitem{AltitudeRelax}
+E. De Jes\'us, \emph{Altitude--Ratio Relaxation on the Thales Partition
+Manifold: the Cubic Compactness Threshold as a Robust Interior Attractor for a
+Class of Imbalance-Driven Flows}, revised technical note, Zenodo (2026).
+Supersedes Ref.~\cite{DynSelSuperseded}.
+
+\bibitem{DynSelSuperseded}
+E. De Jes\'us, \emph{Dynamical Selection of the Cubic Compactness Threshold:
+Altitude--Ratio Imbalance, Partition-Intrinsic Flow, and the Stable Attractor},
+Zenodo (June 2026).
+\href{https://doi.org/10.5281/zenodo.20603097}{DOI:10.5281/zenodo.20603097}.
+Superseded by Ref.~\cite{AltitudeRelax}, in which the $C(1-C)$ prefactor and
+the ``dynamically selected'' framing are withdrawn.
+
+\bibitem{NormNulls}
+E. De Jes\'us, \emph{Two Normalization Nulls and the Tests That Tell Them
+Apart}, Zenodo (2026).
+\href{https://doi.org/10.5281/zenodo.20774968}{DOI:10.5281/zenodo.20774968}.
+
+\bibitem{Newtonian2Body}
+E. De Jes\'us, \emph{Newtonian Two-Body Gravity on the Thales Semicircle: A
+Geometric Diagnostic for Mass-Partition Structure}, Zenodo (2026).
+\href{https://doi.org/10.5281/zenodo.18496501}{DOI:10.5281/zenodo.18496501}.
+
+% ---------------------------------------------------------------------
+% EXTERNAL LITERATURE
+% External literature.
+% ---------------------------------------------------------------------
+\bibitem{Wald}
+R. M. Wald, \emph{General Relativity}, University of Chicago Press (1984).
+
+\bibitem{MTW}
+C. W. Misner, K. S. Thorne and J. A. Wheeler, \emph{Gravitation},
+W. H. Freeman (1973).
+
+\bibitem{Lovelock71}
+D. Lovelock, ``The Einstein tensor and its generalizations,''
+\emph{J. Math. Phys.} \textbf{12}, 498 (1971).
+
+\bibitem{Blanchet2024}
+L. Blanchet, ``Post-Newtonian theory for gravitational waves,''
+\emph{Living Reviews in Relativity} \textbf{27}, 4 (2024).
+\href{https://doi.org/10.1007/s41114-024-00050-z}{DOI:10.1007/s41114-024-00050-z}.
+
+\bibitem{LL}
+L. D. Landau and E. M. Lifshitz, \emph{The Classical Theory of Fields}, 4th ed.,
+Butterworth--Heinemann (1975).
+
+\bibitem{ChoquetBruhat}
+Y. Choquet-Bruhat, \emph{General Relativity and the Einstein Equations},
+Oxford University Press (2009).
+
+\bibitem{Amari}
+S. Amari and H. Nagaoka, \emph{Methods of Information Geometry}, AMS (2000).
+
+\bibitem{OEIS}
+OEIS Foundation Inc., \emph{A000930: Narayana's cows sequence}, The On-Line
+Encyclopedia of Integer Sequences, \url{https://oeis.org/A000930}.
+
+\bibitem{Planck18}
+Planck Collaboration (N.~Aghanim \emph{et al.}), ``Planck 2018 results.~VI.
+Cosmological parameters,'' \emph{Astron. Astrophys.} \textbf{641}, A6 (2020).
+\href{https://doi.org/10.1051/0004-6361/201833910}{DOI:10.1051/0004-6361/201833910}.
+
+\end{thebibliography}
+
+\end{document}

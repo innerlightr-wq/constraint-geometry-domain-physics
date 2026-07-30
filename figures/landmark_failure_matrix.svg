@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 560" width="760" height="560" role="img" aria-label="Two by two matrix of domain-derived meaning against empirical occupancy">
+  <title>Landmark failure matrix</title>
+  <desc>Domain-derived meaning on the vertical axis, empirical occupancy on the horizontal. The LambdaCDM acceleration landmark has meaning without occupancy; the LambdaCDM cubic state has occupancy without meaning; the perturbative GR cubic is untested with a schematic embedding; only the top-right cell is a diagnostic.</desc>
+
+  <style>
+    .bg    { fill: #ffffff; }
+    .grid  { fill: #ffffff; stroke: #33415c; stroke-width: 1.6; }
+    .cell  { fill: #f6f7f9; stroke: #8a93a5; stroke-width: 1.2; }
+    .cellG { fill: #eef3ee; stroke: #2f5d3a; stroke-width: 1.8; }
+    .cellR { fill: #fbf0f0; stroke: #8a2f2f; stroke-width: 1.4; }
+    .hdr   { font: 600 15px sans-serif; fill: #22303f; }
+    .lab   { font: 600 13px sans-serif; fill: #22303f; }
+    .itm   { font: 12px sans-serif; fill: #22303f; }
+    .cap   { font: italic 12px sans-serif; fill: #55637a; }
+    .axis  { font: 600 13px sans-serif; fill: #33415c; }
+    .tick  { font: 12.5px sans-serif; fill: #55637a; }
+  </style>
+
+  <rect class="bg" x="0" y="0" width="760" height="560"/>
+  <text class="hdr" x="380" y="30" text-anchor="middle">Domain-derived meaning against empirical occupancy</text>
+
+  <!-- axis labels -->
+  <text class="axis" x="34" y="270" text-anchor="middle" transform="rotate(-90 34 270)">domain-derived meaning</text>
+  <text class="axis" x="400" y="540" text-anchor="middle">empirical occupancy</text>
+  <text class="tick" x="60" y="160" text-anchor="middle" transform="rotate(-90 60 160)">present</text>
+  <text class="tick" x="60" y="370" text-anchor="middle" transform="rotate(-90 60 370)">absent</text>
+  <text class="tick" x="240" y="514" text-anchor="middle">absent</text>
+  <text class="tick" x="560" y="514" text-anchor="middle">present</text>
+
+  <!-- top-left: meaning, no occupancy -->
+  <rect class="cellR" x="90" y="60" width="300" height="200" rx="6"/>
+  <text class="lab" x="110" y="88">Meaning without occupancy</text>
+  <text class="itm" x="110" y="114">ΛCDM  R_J = 3/2</text>
+  <text class="itm" x="110" y="136">extremum of the partition-flow</text>
+  <text class="itm" x="110" y="154">acceleration — an exact feature</text>
+  <text class="itm" x="110" y="172">of the derived flow</text>
+  <text class="itm" x="110" y="200">reached at z ≈ 1.0 and z ≈ −0.17;</text>
+  <text class="itm" x="110" y="218">the present universe is not there</text>
+  <text class="cap" x="110" y="244">not a diagnostic</text>
+
+  <!-- top-right: both -->
+  <rect class="cellG" x="410" y="60" width="300" height="200" rx="6"/>
+  <text class="lab" x="430" y="88">Ideal diagnostic</text>
+  <text class="itm" x="430" y="114">meaning and occupancy together,</text>
+  <text class="itm" x="430" y="132">under a derived embedding</text>
+  <text class="itm" x="430" y="160">plus a declared normalization and</text>
+  <text class="itm" x="430" y="178">a test that could fail</text>
+  <text class="cap" x="430" y="212">no case in the note occupies</text>
+  <text class="cap" x="430" y="230">this cell</text>
+
+  <!-- bottom-left: neither -->
+  <rect class="cell" x="90" y="280" width="300" height="200" rx="6"/>
+  <text class="lab" x="110" y="308">Neither</text>
+  <text class="itm" x="110" y="334">Newtonian two-body cubic</text>
+  <text class="itm" x="110" y="356">mass ratio m₂/m₁ = ψ² ≈ 2.148</text>
+  <text class="itm" x="110" y="378">embedding is exact, F(q) = q —</text>
+  <text class="itm" x="110" y="396">and the landmark is still empty</text>
+  <text class="cap" x="110" y="424">a derived embedding is necessary</text>
+  <text class="cap" x="110" y="442">but not sufficient</text>
+
+  <!-- bottom-right: occupancy, no meaning -->
+  <rect class="cellR" x="410" y="280" width="300" height="200" rx="6"/>
+  <text class="lab" x="430" y="308">Occupancy without meaning</text>
+  <text class="itm" x="430" y="334">ΛCDM cubic state, z ≈ 0.002</text>
+  <text class="itm" x="430" y="356">the flow potential is linear,</text>
+  <text class="itm" x="430" y="374">U′(χ) ≡ −3/2 ≠ 0, so there is</text>
+  <text class="itm" x="430" y="392">no interior critical point</text>
+  <text class="itm" x="430" y="418">mechanism provably absent</text>
+  <text class="cap" x="430" y="444">occupancy alone validates nothing</text>
+
+  <!-- unplaced case -->
+  <rect class="cell" x="90" y="492" width="620" height="0" rx="0" stroke="none" fill="none"/>
+  <text class="itm" x="380" y="470" text-anchor="middle"> </text>
+  <text class="cap" x="380" y="492" text-anchor="middle">Perturbative-GR cubic: suggestive, but unplaced — the embedding is schematic and no test has been performed.</text>
+
+  <!-- axes lines -->
+  <path d="M 90 60 L 90 480" stroke="#33415c" stroke-width="1.6" fill="none"/>
+  <path d="M 90 480 L 710 480" stroke="#33415c" stroke-width="1.6" fill="none"/>
+</svg>

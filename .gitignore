@@ -1,0 +1,28 @@
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+*.nav
+*.snm
+*.vrb
+
+# Editor and OS noise
+*~
+*.swp
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Do not ignore the release PDF: it is part of the deliverable.
+!paper/constraint_geometry_domain_physics.pdf

@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" width="760" height="420" role="img" aria-label="A diagnostic requires an intrinsic landmark, an independent embedding, and domain meaning or a falsifiable consequence">
+  <title>The three simultaneous requirements for a diagnostic</title>
+  <desc>All three of an intrinsic landmark, an independently justified embedding, and a domain meaning or falsifiable consequence are required. Any one missing leaves a named failure mode.</desc>
+
+  <style>
+    .bg   { fill: #ffffff; }
+    .req  { fill: #f4f6f8; stroke: #33415c; stroke-width: 1.6; }
+    .out  { fill: #eef3ee; stroke: #2f5d3a; stroke-width: 1.8; }
+    .hdr  { font: 600 15px sans-serif; }
+    .itm  { font: 12.5px sans-serif; fill: #22303f; }
+    .mono { font: 12.5px ui-monospace, Menlo, Consolas, monospace; fill: #22303f; }
+    .glyph{ font: 600 26px sans-serif; fill: #33415c; }
+    .cap  { font: italic 12.5px sans-serif; fill: #55637a; }
+    .fail { font: 12.5px sans-serif; fill: #8a2f2f; }
+    .arrow{ stroke: #33415c; stroke-width: 1.8; fill: none; }
+  </style>
+
+  <rect class="bg" x="0" y="0" width="760" height="420"/>
+  <text class="hdr" x="380" y="34" text-anchor="middle" fill="#22303f">All three are required simultaneously</text>
+
+  <rect class="req" x="24" y="56" width="200" height="118" rx="8"/>
+  <text class="hdr" x="44" y="82" fill="#33415c">1. Intrinsic landmark</text>
+  <text class="mono" x="44" y="106">a = b³  on  a + b = 1</text>
+  <text class="itm" x="44" y="128">exactly located in</text>
+  <text class="itm" x="44" y="146">partition space</text>
+  <text class="cap" x="44" y="166">supplied by geometry</text>
+
+  <text class="glyph" x="243" y="122" text-anchor="middle">+</text>
+
+  <rect class="req" x="262" y="56" width="212" height="118" rx="8"/>
+  <text class="hdr" x="282" y="82" fill="#33415c">2. Independent embedding</text>
+  <text class="mono" x="282" y="106">a / b = F(X)</text>
+  <text class="itm" x="282" y="128">derived from domain</text>
+  <text class="itm" x="282" y="146">physics, not chosen</text>
+  <text class="cap" x="282" y="166">normalization declared</text>
+
+  <text class="glyph" x="493" y="122" text-anchor="middle">+</text>
+
+  <rect class="req" x="512" y="56" width="224" height="118" rx="8"/>
+  <text class="hdr" x="532" y="82" fill="#33415c">3. Domain meaning</text>
+  <text class="itm" x="532" y="106">the domain distinguishes</text>
+  <text class="itm" x="532" y="124">that state — or the claim</text>
+  <text class="itm" x="532" y="142">makes a prediction</text>
+  <text class="itm" x="532" y="160">that could fail</text>
+
+  <path class="arrow" d="M 380 180 L 380 214" marker-end="url(#tip2)"/>
+
+  <rect class="out" x="200" y="224" width="360" height="52" rx="8"/>
+  <text class="hdr" x="380" y="256" text-anchor="middle" fill="#2f5d3a">Physical diagnostic</text>
+
+  <text class="hdr" x="380" y="312" text-anchor="middle" fill="#8a2f2f">Remove any one and a named failure mode remains</text>
+  <text class="fail" x="380" y="338" text-anchor="middle">no (1): nothing to test — the geometry offers no locus</text>
+  <text class="fail" x="380" y="358" text-anchor="middle">no (2): manufactured threshold — F can be tuned to any target</text>
+  <text class="fail" x="380" y="378" text-anchor="middle">no (3): transit marker — correct, exactly located, physically empty</text>
+  <text class="cap" x="380" y="402" text-anchor="middle">These three negatives are distinguishable, and distinguishing them is the point.</text>
+
+  <defs>
+    <marker id="tip2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#33415c"/>
+    </marker>
+  </defs>
+</svg>

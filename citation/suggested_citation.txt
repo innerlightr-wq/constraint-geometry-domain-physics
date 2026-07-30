@@ -1,0 +1,24 @@
+De Jesús, E. (2026). Constraint Geometry and Domain Physics:
+A Two-Layer Architecture for Binary Partition Diagnostics.
+Conceptual Synthesis Note.
+
+DOI: 10.5281/zenodo.21695430
+https://doi.org/10.5281/zenodo.21695430
+
+ORCID: 0009-0007-0190-9143
+
+BibTeX:
+
+@article{DeJesus2026ConstraintGeometry,
+  author  = {De Jes\'us, Elias},
+  title   = {Constraint Geometry and Domain Physics: A Two-Layer
+             Architecture for Binary Partition Diagnostics},
+  year    = {2026},
+  month   = {7},
+  note    = {Conceptual synthesis note},
+  publisher = {Zenodo},
+  doi     = {10.5281/zenodo.21695430},
+  url     = {https://doi.org/10.5281/zenodo.21695430}
+}
+
+License: CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)

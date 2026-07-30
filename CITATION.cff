@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite the accompanying conceptual synthesis note."
+title: "Constraint Geometry and Domain Physics: A Two-Layer Architecture for Binary Partition Diagnostics"
+type: article
+authors:
+  - family-names: "De Jesús"
+    given-names: "Elias"
+    orcid: "https://orcid.org/0009-0007-0190-9143"
+abstract: >-
+  A conceptual synthesis note on the division of labor between binary-partition
+  constraint geometry and domain physics. Constraint geometry supplies a
+  conserved partition, intrinsic coordinates, response measures, and exactly
+  located relational landmarks; domain physics supplies the sectors, the
+  normalization, the embedding of physical variables into the partition, the
+  dynamics, and any empirical meaning. A physical diagnostic emerges only where
+  the two layers intersect under an independently justified map. The note gives
+  a five-step protocol, a set of safeguards, an explicit epistemic tiering, and
+  worked readings in perturbative general relativity, flat Lambda-CDM,
+  effective potentials, and Newtonian two-body mechanics.
+keywords:
+  - constraint geometry
+  - binary partition
+  - Thales altitude
+  - domain embedding
+  - intrinsic relational landmark
+  - compactness diagnostic
+  - perturbative general relativity
+  - epistemic tiering
+date-released: "2026-07"
+license: "CC-BY-4.0"
+doi: "10.5281/zenodo.21695430"

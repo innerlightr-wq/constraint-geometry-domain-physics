@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 560" width="760" height="560" role="img" aria-label="Constraint geometry plus domain physics yields a candidate physical diagnostic requiring an independent test">
+  <title>The two-layer architecture</title>
+  <desc>Constraint geometry and domain physics combine to give a candidate physical diagnostic, which requires an independent test before it becomes a diagnostic.</desc>
+
+  <style>
+    .bg    { fill: #ffffff; }
+    .box   { fill: #f4f6f8; stroke: #33415c; stroke-width: 1.6; }
+    .boxA  { fill: #eef3ee; stroke: #2f5d3a; stroke-width: 1.6; }
+    .boxB  { fill: #f1eff6; stroke: #4b3a68; stroke-width: 1.6; }
+    .boxC  { fill: #fdf6ec; stroke: #7a5a1e; stroke-width: 1.8; }
+    .boxD  { fill: #ffffff; stroke: #8a2f2f; stroke-width: 1.8; stroke-dasharray: 6 4; }
+    .hdr   { font: 600 17px sans-serif; }
+    .itm   { font: 13.5px sans-serif; fill: #22303f; }
+    .mono  { font: 13.5px ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; fill: #22303f; }
+    .glyph { font: 600 30px sans-serif; fill: #33415c; }
+    .cap   { font: italic 13px sans-serif; fill: #55637a; }
+    .arrow { stroke: #33415c; stroke-width: 1.8; fill: none; }
+  </style>
+
+  <rect class="bg" x="0" y="0" width="760" height="560"/>
+
+  <!-- Constraint geometry -->
+  <rect class="boxA" x="30" y="30" width="300" height="180" rx="8"/>
+  <text class="hdr" x="50" y="58" fill="#2f5d3a">Constraint Geometry</text>
+  <text class="mono" x="50" y="84">a + b = 1</text>
+  <text class="mono" x="50" y="106">h = √(ab),  χ = a − b</text>
+  <text class="mono" x="50" y="128">R = 1/(1 − χ²) = 1/(4h²)</text>
+  <text class="mono" x="50" y="150">ξ = arctanh χ</text>
+  <text class="itm" x="50" y="176">intrinsic relational landmarks</text>
+  <text class="cap" x="50" y="196">exact, parameter-free, no physics</text>
+
+  <!-- plus -->
+  <text class="glyph" x="365" y="130" text-anchor="middle">+</text>
+
+  <!-- Domain physics -->
+  <rect class="boxB" x="400" y="30" width="330" height="180" rx="8"/>
+  <text class="hdr" x="420" y="58" fill="#4b3a68">Domain Physics</text>
+  <text class="itm" x="420" y="84">identity of the two sectors</text>
+  <text class="itm" x="420" y="106">closure / conservation, normalization</text>
+  <text class="mono" x="420" y="128">a / b = F(X)</text>
+  <text class="itm" x="420" y="150">dynamics, admissible range</text>
+  <text class="itm" x="420" y="176">empirical interpretation</text>
+  <text class="cap" x="420" y="196">supplies everything the geometry cannot</text>
+
+  <!-- down arrow 1 -->
+  <path class="arrow" d="M 380 215 L 380 265" marker-end="url(#tip)"/>
+
+  <!-- candidate -->
+  <rect class="boxC" x="150" y="275" width="460" height="80" rx="8"/>
+  <text class="hdr" x="380" y="305" text-anchor="middle" fill="#7a5a1e">Candidate Physical Diagnostic</text>
+  <text class="itm" x="380" y="330" text-anchor="middle">a landmark located in a domain coordinate:</text>
+  <text class="mono" x="380" y="348" text-anchor="middle">F(X*) = r*</text>
+
+  <!-- down arrow 2 -->
+  <path class="arrow" d="M 380 358 L 380 408" marker-end="url(#tip)"/>
+
+  <!-- test required -->
+  <rect class="boxD" x="150" y="418" width="460" height="76" rx="8"/>
+  <text class="hdr" x="380" y="447" text-anchor="middle" fill="#8a2f2f">Independent Test Required</text>
+  <text class="itm" x="380" y="470" text-anchor="middle">derived embedding, or a prediction that could fail</text>
+  <text class="cap" x="380" y="487" text-anchor="middle">an arbitrary F(X) can place the landmark anywhere</text>
+
+  <text class="cap" x="380" y="527" text-anchor="middle">r* is fixed by the geometry; X* moves with the embedding.</text>
+  <text class="cap" x="380" y="546" text-anchor="middle">Neither layer alone yields a physical diagnostic.</text>
+
+  <defs>
+    <marker id="tip" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#33415c"/>
+    </marker>
+  </defs>
+</svg>

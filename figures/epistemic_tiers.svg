@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 520" width="760" height="520" role="img" aria-label="Three epistemic tiers: exact mathematics, domain diagnostic, speculative interpretation">
+  <title>Epistemic tiers</title>
+  <desc>Tier 1 exact mathematics, Tier 2 domain diagnostic, Tier 3 speculative interpretation, with what each requires and where the present note stands.</desc>
+
+  <style>
+    .bg   { fill: #ffffff; }
+    .t1   { fill: #eef3ee; stroke: #2f5d3a; stroke-width: 1.8; }
+    .t2   { fill: #fdf6ec; stroke: #7a5a1e; stroke-width: 1.8; }
+    .t3   { fill: #fbf0f0; stroke: #8a2f2f; stroke-width: 1.8; stroke-dasharray: 6 4; }
+    .hdr  { font: 600 16px sans-serif; }
+    .itm  { font: 12.5px sans-serif; fill: #22303f; }
+    .mono { font: 12.5px ui-monospace, Menlo, Consolas, monospace; fill: #22303f; }
+    .cap  { font: italic 12.5px sans-serif; fill: #55637a; }
+    .note { font: 600 12.5px sans-serif; fill: #8a2f2f; }
+    .arrow{ stroke: #33415c; stroke-width: 1.6; fill: none; }
+    .axis { font: 12px sans-serif; fill: #55637a; }
+  </style>
+
+  <rect class="bg" x="0" y="0" width="760" height="520"/>
+
+  <!-- Tier 1 -->
+  <rect class="t1" x="120" y="34" width="600" height="132" rx="8"/>
+  <text class="hdr" x="142" y="60" fill="#2f5d3a">Tier 1 — Exact mathematics</text>
+  <text class="mono" x="142" y="84">a + b = 1,  h = √(ab),  4h² + χ² = 1,  R = 1/(4h²)</text>
+  <text class="mono" x="142" y="104">h = a/b  ⟺  a = b³  ⟺  b³ + b − 1 = 0;  uniqueness; sign law</text>
+  <text class="mono" x="142" y="124">coordinate transformations; Fisher metric; C(1 + C)² = 1 under a declared embedding</text>
+  <text class="cap" x="142" y="150">True and checkable. Explanatory of nothing by itself.</text>
+
+  <path class="arrow" d="M 420 168 L 420 194" marker-end="url(#tip3)"/>
+
+  <!-- Tier 2 -->
+  <rect class="t2" x="120" y="204" width="600" height="146" rx="8"/>
+  <text class="hdr" x="142" y="230" fill="#7a5a1e">Tier 2 — Domain diagnostic</text>
+  <text class="itm" x="142" y="254">independently motivated sectors, with a reason they close</text>
+  <text class="itm" x="142" y="274">derived embedding a/b = F(X), conventional parts separated</text>
+  <text class="itm" x="142" y="294">declared normalization; physical admissibility of the landmark</text>
+  <text class="itm" x="142" y="314">a test that could fail: held-out prediction, family collapse with residual,</text>
+  <text class="itm" x="142" y="332">independent determination, or compression</text>
+
+  <path class="arrow" d="M 420 352 L 420 378" marker-end="url(#tip3)"/>
+
+  <!-- Tier 3 -->
+  <rect class="t3" x="120" y="388" width="600" height="112" rx="8"/>
+  <text class="hdr" x="142" y="414" fill="#8a2f2f">Tier 3 — Speculative interpretation</text>
+  <text class="itm" x="142" y="438">universal-mechanism claims; the cubic as fundamental</text>
+  <text class="itm" x="142" y="458">shared geometry read as shared dynamics</text>
+  <text class="itm" x="142" y="478">sharp physical onset unsupported by domain physics</text>
+  <text class="cap" x="142" y="496">Statable only when labelled. Requires Tier-2 evidence first.</text>
+
+  <!-- side note -->
+  <text class="axis" x="106" y="100" text-anchor="end" transform="rotate(-90 106 100)">exact</text>
+  <text class="axis" x="106" y="290" text-anchor="middle" transform="rotate(-90 106 290)">testable</text>
+  <text class="axis" x="106" y="450" text-anchor="start" transform="rotate(-90 106 450)">conjectural</text>
+
+  <text class="note" x="420" y="368" text-anchor="middle">Nothing in the synthesis note reaches Tier 2.</text>
+
+  <defs>
+    <marker id="tip3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#33415c"/>
+    </marker>
+  </defs>
+</svg>
