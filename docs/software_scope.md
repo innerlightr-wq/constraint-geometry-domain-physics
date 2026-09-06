@@ -155,6 +155,23 @@ is unchanged; the one existing generic utility reused is
 `coordinates.compute_h`. See
 [`constraint_intersection_diagnostics.md`](constraint_intersection_diagnostics.md).
 
+## What Milestone 5 adds
+
+`docs/fixed_constraint_record_regimes.md` and, as small illustrations,
+`examples/fixed_constraint_record_regimes.py` /
+`tests/test_fixed_constraint_record_regimes.py` add a
+**documentation-level fixed-constraint record-regime comparison**: two
+closed-form Diophantine-approximation record sequences (Pell-spine
+balance, boundary ladder) computed under an identical ambient
+constraint/admissibility/height triple. This is **standard Diophantine
+mathematics**, synthesized comparatively — no new package abstraction is
+introduced, no universal target-density rule is claimed (a third,
+adversarial two-branch case is used specifically to show target
+arithmetic alone is insufficient), no dynamic-constraint behavior is
+implemented, and no physical interpretation is assigned to any counting
+law, spacing limit, or envelope constant. See
+[`fixed_constraint_record_regimes.md`](fixed_constraint_record_regimes.md).
+
 ## Relationship to the manuscript
 
 The manuscript (`paper/constraint_geometry_domain_physics.tex`) remains

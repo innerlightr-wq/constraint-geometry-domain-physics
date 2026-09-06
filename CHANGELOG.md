@@ -1,5 +1,32 @@
 # Changelog
 
+## Milestone 5 — September 2026: fixed-constraint record regimes
+
+- Added `docs/fixed_constraint_record_regimes.md` and, as small
+  illustrations, `examples/fixed_constraint_record_regimes.py` /
+  `tests/test_fixed_constraint_record_regimes.py`: a controlled
+  comparison of two Diophantine-approximation record sequences on the
+  Pythagorean quarter circle under one fixed ambient
+  constraint/admissibility/height triple.
+- Same Pythagorean geometry, admissibility class, and hypotenuse
+  ordering throughout; balance (Pell spine, `lambda=3+2sqrt(2)`,
+  `N_P(C)~logC/log(lambda)`, persistent envelope oscillation) and
+  boundary (`c_n=2n^2+2n+1` ladder, ratio `->1`, `N_B(C)~sqrt(C/2)`,
+  collapsing envelope oscillation) are distinct, established closed-form
+  regimes reached by varying the target and observable alone.
+- Target arithmetic alone is **not** promoted to a general predictor of
+  record density; the balance/boundary contrast is descriptive of two
+  solved cases, not a universal rule.
+- Observable vanishing order must be separated from arithmetic
+  approximation behavior before comparing exponents across targets
+  (a standard local-asymptotic caution, not a new theorem).
+- The 15-degree/GM-HM two-target case is used only as an adversarial
+  caution (merged, branch-competing chronology) — explicitly **not**
+  counted as a third solved regime; its asymptotic behavior is OPEN.
+- No source-package abstraction added; no dynamic-constraint claim; no
+  physical interpretation assigned to any counting law or envelope
+  constant.
+
 ## Milestone 4 — September 2026: constraint-intersection diagnostics
 
 - Added `docs/constraint_intersection_diagnostics.md`,
