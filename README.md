@@ -85,8 +85,10 @@ Neither is sufficient for a physical diagnostic. Reporting only the second would
 | Path | Contents |
 | --- | --- |
 | [`paper/`](paper/) | The manuscript (LaTeX source and PDF), its bibliography, and build notes |
-| [`docs/`](docs/) | Framework overview, terminology, the five-step protocol, safeguards, epistemic tiers, prior-work map, limitations |
-| [`examples/`](examples/) | Worked readings of perturbative GR, flat ΛCDM, effective potentials, and Newtonian two-body mechanics |
+| [`docs/`](docs/) | Framework overview, terminology, the five-step protocol, safeguards, epistemic tiers, prior-work map, limitations, software scope |
+| [`src/constraint_geometry/`](src/constraint_geometry/) | Reference implementation: exact coordinate algebra, Tier-1 normal-form extraction, numerical falsifiability tests |
+| [`tests/`](tests/) | Reproducible tests for the exact identities, the normal-form extraction, and a synthetic shared-V falsifiability demonstration |
+| [`examples/`](examples/) | Worked readings of perturbative GR, flat ΛCDM, effective potentials, and Newtonian two-body mechanics; an executable Bernoulli/Fisher-information example |
 | [`figures/`](figures/) | Editable SVG diagrams of the architecture, diagnostic requirements, tiers, and the failure matrix |
 | [`citation/`](citation/) | Suggested citation text and Zenodo deposit metadata |
 | [`NON_CLAIMS.md`](NON_CLAIMS.md) | What the framework does not claim, and what it does provide |
@@ -95,7 +97,7 @@ Neither is sufficient for a physical diagnostic. Reporting only the second would
 
 A full description of every file is in [`REPOSITORY_MAP.md`](REPOSITORY_MAP.md).
 
-There is no executable research code in this repository. All results in the note are analytic, and the figures are documentation rather than computed output.
+The repository now contains a small executable reference implementation for the exact partition identities and falsifiability demonstrations (`src/`, `tests/`, `examples/`; see [`docs/software_scope.md`](docs/software_scope.md)). Domain embeddings and physical interpretations remain model inputs and are not decided by the software. The figures remain documentation rather than computed output.
 
 ## Citation
 

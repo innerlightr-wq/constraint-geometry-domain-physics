@@ -24,5 +24,13 @@ Thumbs.db
 .vscode/
 .idea/
 
+# Python build/test artifacts
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+
 # Do not ignore the release PDF: it is part of the deliverable.
 !paper/constraint_geometry_domain_physics.pdf

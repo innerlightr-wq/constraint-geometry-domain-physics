@@ -15,6 +15,8 @@ A file-by-file description of the repository.
 | `NON_CLAIMS.md` | Ten explicit non-claims, and five things the framework does provide. |
 | `REPOSITORY_MAP.md` | This file. |
 | `bibliography_status.md` | Internal bibliographic maintenance record: verified DOIs, unresolved DOIs, supersession notes. The only place unresolved bibliographic gaps are tracked, alongside `citation/zenodo_metadata.md`. |
+| `pyproject.toml` | Minimal packaging metadata for `src/constraint_geometry` (numpy runtime dependency; pytest and scipy as test-only extras). |
+| `conftest.py` | Pytest bootstrap: makes `src/constraint_geometry` importable without an install step, so `pytest` from the repository root works immediately. |
 
 ## `paper/`
 
@@ -24,6 +26,28 @@ A file-by-file description of the repository.
 | `constraint_geometry_domain_physics.pdf` | Compiled release PDF, free of editorial markers and unresolved citation flags. |
 | `references.bib` | BibTeX form of the bibliography, provided for reuse. The manuscript itself uses an embedded `thebibliography` environment. |
 | `build_notes.md` | How to compile, which packages are required, and the pre-release checks. |
+
+## `src/constraint_geometry/`
+
+Reference implementation. Pure `numpy`; no domain-physics inputs, no
+default pass/fail thresholds. See [`docs/software_scope.md`](docs/software_scope.md)
+for the boundary between what this code computes and what it leaves as a
+caller-supplied judgment.
+
+| File | Description |
+| --- | --- |
+| `__init__.py` | Package docstring and module listing. |
+| `coordinates.py` | Exact binary-partition coordinate algebra: `a,b`, `h`, signed/unsigned `chi`, `R`, `xi`, `theta`, the Gudermannian bridge. |
+| `normal_form.py` | Tier-1 normal-form extraction `V_eff^(1)(chi)` from a supplied trajectory. |
+| `falsifiability.py` | Numerical shared-V family test and held-out prediction test. Returns residuals only; `pass_fail` requires an explicit, non-defaulted threshold. |
+
+## `tests/`
+
+| File | Description |
+| --- | --- |
+| `test_identities.py` | Exact coordinate identities (`4h^2+chi^2=1`, `R=1/(1-chi^2)=1/(4h^2)`, `chi=tanh(xi)`, `theta=asin(chi)=gd(xi)`, `R=cosh(xi)^2`) at multiple interior points, including near-boundary and both chi signs. |
+| `test_normal_form.py` | Normal-form extraction verified against trajectories with a known analytic derivative; boundary guard tests. |
+| `test_family_test_synthetic.py` | The central falsifiability demonstration: synthetic trajectories from a shared potential collapse to a small residual, while trajectories from a deliberately mismatched potential are rejected with a materially larger one. |
 
 ## `docs/`
 
@@ -36,6 +60,7 @@ A file-by-file description of the repository.
 | `epistemic_tiers.md` | The three-tier classification: exact mathematics, domain diagnostic, speculative interpretation. |
 | `prior_work_map.md` | How the note relates to eight earlier papers, with novelty stated conservatively. |
 | `limitations.md` | What the note does not settle, and what would be required to settle it. |
+| `software_scope.md` | What `src/constraint_geometry` computes (formally defined operations) versus what it deliberately never decides (domain embeddings, physical equivalence, pass/fail verdicts without a caller-supplied threshold). |
 
 ## `examples/`
 
@@ -45,6 +70,7 @@ A file-by-file description of the repository.
 | `lcdm.md` | The paired failure modes, the ordered-branch issue, and the linear Fisher potential. |
 | `effective_potentials.md` | The Fisher kinetic skeleton, the universal-denominator/contextual-numerator split, and why single-trajectory extraction is tautological. |
 | `newtonian_two_body.md` | The cleanest empty case: an exact embedding with a physically meaningless landmark. |
+| `bernoulli_fisher.py` | Executable EXACT ALGEBRA example: the Bernoulli Fisher information `I_F(p)=1/[p(1-p)]` re-expressed as `1/h^2 = 4R` in partition coordinates. Runs directly with `python examples/bernoulli_fisher.py`. |
 
 ## `figures/`
 

@@ -1,0 +1,21 @@
+[project]
+name = "constraint-geometry"
+version = "0.1.0"
+description = "Exact binary-partition coordinate algebra and Tier-1 normal-form / falsifiability machinery. See docs/software_scope.md for scope."
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.20",
+]
+
+[project.optional-dependencies]
+# scipy is test-only: it generates synthetic ODE trajectories for the
+# falsifiability demonstration in tests/test_family_test_synthetic.py.
+# The library itself (src/constraint_geometry) depends on numpy only.
+test = ["pytest>=7", "scipy>=1.8"]
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
