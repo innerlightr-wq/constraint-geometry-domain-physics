@@ -1,5 +1,34 @@
 # Changelog
 
+## Milestone 4 — September 2026: constraint-intersection diagnostics
+
+- Added `docs/constraint_intersection_diagnostics.md`,
+  `examples/constraint_intersection_diagnostics.py`, and
+  `tests/test_constraint_intersection_diagnostics.py`: a narrow,
+  documentation-level diagnostic for how two constraints relate at a
+  shared zero, worked out for the intrinsic-cubic family.
+- Transversality/rank mathematics used throughout is standard (the
+  regular value theorem / Jacobian rank); no new theorem is claimed.
+- `q=3` is not uniquely transversal: `det J_q=-(1+qb^{q-1})<0` for
+  every `q>0, b>0` — verified for representative `q` values.
+- `q=3` uniquely satisfies the functional identity `h≡a/b` (written
+  `h≡r` to avoid collision with this repository's own response
+  coordinate `R=1/(1-chi^2)`) along the whole power-law curve — a
+  separate fact from transversality, not a consequence of it.
+- Raw determinant magnitude is not a universal transversality-strength
+  measure: `det J` scales exactly by `alpha*beta` under constraint
+  rescaling `F->alpha*F, G->beta*G`, while rank and gradient-angle
+  magnitude do not.
+- Rank/transversality is preserved under a genuine smooth local
+  diffeomorphism; a naively recomputed Euclidean gradient angle is not,
+  without transforming the metric accordingly.
+- First-order rank data does not classify every kind of degeneracy:
+  demonstrated with `F=y, G1=y, G2=y-x^2`, identical gradients at the
+  origin, different second derivatives.
+- No physical meaning assigned to `R*≈0.465571231876`.
+- No new package abstraction introduced; `src/constraint_geometry/` is
+  unchanged, reusing only the existing `coordinates.compute_h`.
+
 ## Milestone 3 — September 2026: reparameterization and direction-rate audit
 
 - Added `examples/gauge_reparameterization.py` and

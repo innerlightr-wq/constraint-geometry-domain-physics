@@ -50,6 +50,7 @@ caller-supplied judgment.
 | `test_family_test_synthetic.py` | The central falsifiability demonstration: synthetic trajectories from a shared potential collapse to a small residual, while trajectories from a deliberately mismatched potential are rejected with a materially larger one. |
 | `test_gauge_running.py` | Tests for the gauge-coupling-running adversarial example: exact partition algebra, the closed-form cross-check, exact separability (`V=S^2*v(chi)`), the lambda^2 scale-transformation law, non-collapse of a genuine different-S family (with a fixed-S control that does collapse), and the S-normalization rescue attempt. |
 | `test_gauge_reparameterization.py` | Tests for the positive-time-reparameterization example: the reduced `chi(tau)` equation, direction invariance under `S>0` on a dense grid, `chi(tau)` collapse vs. `chi(t)` non-collapse across different-`S0` trajectories, `K`-conservation (with explicit handling of the singular locus), fixed-point/stability preservation under positive `S`, and `V_eff` sign blindness. |
+| `test_constraint_intersection_diagnostics.py` | Tests for the constraint-intersection diagnostics example: power-family transversality for representative `q` (`q=3` not distinguished), the `q=3`-unique `h≡r` functional identity, rank/determinant/angle behavior under constraint rescaling, rank preservation vs. naive-angle change under a genuine local diffeomorphism, tangency (rank loss), and the first-order redundancy-vs-tangency limitation. |
 
 ## `docs/`
 
@@ -64,6 +65,7 @@ caller-supplied judgment.
 | `limitations.md` | What the note does not settle, and what would be required to settle it. |
 | `software_scope.md` | What `src/constraint_geometry` computes (formally defined operations) versus what it deliberately never decides (domain embeddings, physical equivalence, pass/fail verdicts without a caller-supplied threshold). |
 | `state_dimension.md` | Constraint-state dimension (`chi`, relative composition) versus domain-dynamical-state dimension (`(chi,S)`, required to close the one-loop gauge-running system) — the distinction between algebraic separability of a potential's shape and autonomous reduction of its dynamics. Also covers projected-orbit dimension, rate, direction, and why the existing `V_eff` normal form is direction-blind. |
+| `constraint_intersection_diagnostics.md` | Narrow, standard mathematics (Jacobian rank / regular value theorem) for how two constraints relate at a shared zero: compatibility vs. transversality vs. conditioning, which are invariant under constraint rescaling and coordinate change, and which are not. Worked out for the intrinsic-cubic family; no physical meaning assigned to `R*`. |
 
 ## `examples/`
 
@@ -76,6 +78,7 @@ caller-supplied judgment.
 | `bernoulli_fisher.py` | Executable EXACT ALGEBRA example: the Bernoulli Fisher information `I_F(p)=1/[p(1-p)]` re-expressed as `1/h^2 = 4R` in partition coordinates. Runs directly with `python examples/bernoulli_fisher.py`. |
 | `gauge_running.py` | Executable adversarial example: gauge-coupling running as a test of the autonomous-partition-potential hypothesis. Derives the closed `(chi,S)` system, the separable closed-form potential, the exact lambda^2 scale-transformation law, and an INFORMATIVE NEGATIVE RESULT (no autonomous `V(chi)` fits the family) with a passing control. Runs directly with `python examples/gauge_running.py`. |
 | `gauge_reparameterization.py` | Executable example: the positive state-dependent reparameterization `d(tau)=S dt` that makes the reduced `chi(tau)` flow autonomous, the conserved orbit label `K`, the direction comparator `D(chi)`, and `V_eff` sign blindness under velocity reversal. Reuses `gauge_running.py`'s domain model. Runs directly with `python examples/gauge_reparameterization.py`. |
+| `constraint_intersection_diagnostics.py` | Executable example: power-family transversality (`det J_q<0` for every `q>0`), the `q=3`-unique `h≡r` identity, `|det J|` scaling vs. rank invariance under constraint rescaling, gradient-angle behavior under rescaling and under a genuine local diffeomorphism, tangency, and the first-order redundancy-vs-tangency limitation. Not a comparator framework or scoring system. Runs directly with `python examples/constraint_intersection_diagnostics.py`. |
 
 ## `figures/`
 

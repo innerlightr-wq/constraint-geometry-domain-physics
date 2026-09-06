@@ -138,6 +138,23 @@ milestone does not claim otherwise. See
 [`state_dimension.md`](state_dimension.md), "Projected orbit dimension,
 rate, and direction."
 
+## What Milestone 4 adds
+
+`docs/constraint_intersection_diagnostics.md`,
+`examples/constraint_intersection_diagnostics.py`, and
+`tests/test_constraint_intersection_diagnostics.py` add a
+**documentation-level constraint-intersection diagnostic**: which of
+compatibility, transversality/rank, and conditioning (determinant
+magnitude, gradient angle) survive constraint rescaling and coordinate
+change, worked out for the intrinsic-cubic family. This is **not a new
+mathematical framework and not a universal transversality score** — the
+underlying mathematics (Jacobian rank, the regular value theorem,
+exterior-algebra independence of covectors) is standard, and no physical
+interpretation is assigned to `R*≈0.465571231876`. `src/constraint_geometry/`
+is unchanged; the one existing generic utility reused is
+`coordinates.compute_h`. See
+[`constraint_intersection_diagnostics.md`](constraint_intersection_diagnostics.md).
+
 ## Relationship to the manuscript
 
 The manuscript (`paper/constraint_geometry_domain_physics.tex`) remains
