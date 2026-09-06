@@ -1,5 +1,39 @@
 # Changelog
 
+## Milestone 3 — September 2026: reparameterization and direction-rate audit
+
+- Added `examples/gauge_reparameterization.py` and
+  `tests/test_gauge_reparameterization.py`, extending the Milestone-2
+  gauge-running example with a positive state-dependent time
+  reparameterization (`d(tau)=S dt`, `S>0`).
+- Derived and verified the reduced, autonomous one-dimensional
+  `chi(tau)` flow, and the conserved orbit label `K` (a first integral
+  of the full `(chi,S)` system, undefined only at the reduced flow's own
+  equilibrium and never silently evaluated there).
+- Verified positive-`S` direction invariance: `sign(dchi/dt) =
+  sign(dchi/dtau) = D(chi)` for `S>0`, on a dense deterministic grid
+  (zero mismatches). This is a standard dynamical-systems result
+  (positive-scalar orbital equivalence / Sundman-type time-rescaling),
+  not presented as novel — only its specific closed form for this
+  domain model is new content here.
+- Verified that the repository's existing effective-potential normal
+  form is direction-blind (`V_eff(chi,+v)=V_eff(chi,-v)`, built from
+  squared velocity), and that the signed comparator `D(chi)` is a
+  complementary, non-redundant channel relative to that specific
+  existing tool — not multiplied into `V_eff`, not a replacement for it.
+- Made explicit, and kept carefully unconflated: full state dimension
+  `(chi,S)=2`, required for coupling reconstruction and evolution in
+  the original RG parameter `t`, versus reduced autonomous
+  `chi`-orbit dimension `=1`, holding only after the positive
+  reparameterization.
+- Added a "Projected orbit dimension, rate, and direction" subsection
+  to the existing `docs/state_dimension.md` (no new directionality
+  document created).
+- No empirical data introduced; no claim of empirical validation; no
+  claim of novelty for time reparameterization, orbital equivalence,
+  phase-line direction, or sign/magnitude decomposition, all of which
+  are standard dynamical-systems mathematics.
+
 ## Milestone 2 — September 2026: gauge-coupling-running adversarial example
 
 - Added `examples/gauge_running.py` and `tests/test_gauge_running.py`, an

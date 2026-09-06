@@ -120,6 +120,24 @@ evolution rate — the extracted potential is algebraically separable
 carefully distinct from a claim that `chi` is dynamically insufficient in
 general.
 
+## What Milestone 3 adds
+
+`examples/gauge_reparameterization.py` and
+`tests/test_gauge_reparameterization.py` test three narrow, closely related
+claims about the same gauge-running domain model, none of them a new
+framework: (1) **projected-orbit reparameterization** — that `d(tau)=S dt`
+makes the reduced `chi(tau)` flow autonomous; (2) **direction invariance
+under positive rate scaling** — that `S>0` changes the traversal rate of
+`chi` in the original clock but never its oriented phase line; and (3)
+**effective-potential sign blindness** — that the existing `V_eff^(1)`
+normal form, being built from squared velocity, cannot distinguish `+v`
+from `-v`, so the signed comparator `D(chi)` is complementary information,
+not a redundant restatement. Positive-scalar time reparameterization
+(orbital equivalence) is standard dynamical-systems mathematics; this
+milestone does not claim otherwise. See
+[`state_dimension.md`](state_dimension.md), "Projected orbit dimension,
+rate, and direction."
+
 ## Relationship to the manuscript
 
 The manuscript (`paper/constraint_geometry_domain_physics.tex`) remains
