@@ -172,6 +172,23 @@ implemented, and no physical interpretation is assigned to any counting
 law, spacing limit, or envelope constant. See
 [`fixed_constraint_record_regimes.md`](fixed_constraint_record_regimes.md).
 
+## What Milestone 6 adds
+
+`docs/dynamic_constraint_diagnostics.md` and, as small illustrations,
+`examples/dynamic_constraint_diagnostics.py` /
+`tests/test_dynamic_constraint_diagnostics.py` add
+**documentation/examples for standard moving-constraint / DAE
+compatibility diagnostics**: the constraint-preservation equation and
+the affine compatible-velocity space, for constraints whose
+configuration changes in time or with the state. This is **standard
+differential-algebraic-equation / linear-algebra structure**, not new
+mathematics. Explicitly out of scope: no dynamics solver, no
+integrator, no mechanics engine, no GR implementation, and no claim
+that Milestone 5's record chronology transfers into this setting.
+`src/constraint_geometry/` is unchanged — no source-package API
+expansion was needed. See
+[`dynamic_constraint_diagnostics.md`](dynamic_constraint_diagnostics.md).
+
 ## Relationship to the manuscript
 
 The manuscript (`paper/constraint_geometry_domain_physics.tex`) remains

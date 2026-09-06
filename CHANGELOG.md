@@ -1,5 +1,37 @@
 # Changelog
 
+## Milestone 6 — September 2026: dynamic constraint diagnostics
+
+- Added `docs/dynamic_constraint_diagnostics.md` and, as small
+  illustrations, `examples/dynamic_constraint_diagnostics.py` /
+  `tests/test_dynamic_constraint_diagnostics.py`: a narrow bridge from
+  the existing static constraint-intersection diagnostics
+  (`constraint_intersection_diagnostics.md`) to constraints whose
+  configuration changes in time or with the state.
+- The constraint-preservation equation
+  (`D_x Phi . xdot + D_C Phi . Cdot = 0`) and the resulting affine
+  compatible-velocity space (`xdot_particular + ker(D_x Phi)`) are the
+  central objects — standard differential-algebraic-equation /
+  linear-algebra structure, not a new theorem.
+- A five-channel diagnostic decomposition (existence, regularity,
+  conditioning, transport, selected dynamics) organizes the note; the
+  compatible-velocity space is documented as derived from regularity
+  and transport jointly, not a sixth independent channel.
+- Worked controls: translating line, rotating line, expanding circle,
+  and a `y^2-c` degeneracy family exhibiting existence/regularity
+  loss/branching together, with an explicit caution that a defining
+  function's rank defect must not be confused with genuine singularity
+  of the underlying set.
+- A representation-invariance table: rank, kernel, and the
+  compatible-velocity space survive constraint rescaling; raw
+  derivative magnitudes, gradient norm, and determinant magnitude do
+  not — directly extending the Milestone-4 result.
+- Explicit firewalls: Milestone 5's record chronology provides no
+  mathematical bridge here; the architecture is not general relativity
+  and is used at most as a structural analogy, not developed further.
+- No source-package abstraction added; no dynamics solver, integrator,
+  or mechanics engine; no new mathematical theory claimed.
+
 ## Milestone 5 — September 2026: fixed-constraint record regimes
 
 - Added `docs/fixed_constraint_record_regimes.md` and, as small
