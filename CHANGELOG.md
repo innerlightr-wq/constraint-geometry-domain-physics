@@ -1,6 +1,31 @@
 # Changelog
 
-## v1.1.0 — September 2026 (Milestone 1: reference implementation)
+## Milestone 2 — September 2026: gauge-coupling-running adversarial example
+
+- Added `examples/gauge_running.py` and `tests/test_gauge_running.py`, an
+  adversarial test of the autonomous one-dimensional partition-potential
+  hypothesis (docs/protocol.md, Step 5) against gauge-coupling running at
+  one loop, reusing the Milestone-1 API unchanged.
+- Derived the closed `(chi, S)` system for the one-loop running equations
+  and independently re-derived the closed-form extracted potential,
+  cross-checked against the source paper's own reported equation.
+- Demonstrated exact `S^2` scaling of the extracted normal form under the
+  ratio-preserving rescaling `alpha -> lambda*alpha` (`chi` fixed).
+- Demonstrated failure of autonomous chi-only dynamics: a genuine
+  different-`S` family does not collapse under the shared-V family test,
+  while a deliberately constructed fixed-`S` control does — an
+  INFORMATIVE NEGATIVE RESULT for the autonomous-partition-potential
+  hypothesis in this domain, not a claim about gauge physics in general.
+- Retained an explicit distinction, throughout the code and in the new
+  `docs/state_dimension.md`, between ALGEBRAIC SEPARABILITY
+  (`V(chi;S) = S^2 * v(chi)`, which holds exactly) and AUTONOMOUS
+  DYNAMICAL REDUCTION (`dchi/dt = F(chi)` alone, which does not).
+- Added `docs/state_dimension.md`, distinguishing constraint-state
+  dimension (`chi`) from domain-dynamical-state dimension (`(chi,S)`, for
+  this model) as a per-domain structural finding, not a universal claim.
+- No empirical data introduced; no claim of empirical validation.
+
+## Milestone 1 — September 2026: reference implementation
 
 - Added a small executable Python package, `src/constraint_geometry/`,
   implementing the exact binary-partition coordinate algebra, the Tier-1

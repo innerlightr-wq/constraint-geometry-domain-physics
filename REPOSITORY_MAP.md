@@ -48,6 +48,7 @@ caller-supplied judgment.
 | `test_identities.py` | Exact coordinate identities (`4h^2+chi^2=1`, `R=1/(1-chi^2)=1/(4h^2)`, `chi=tanh(xi)`, `theta=asin(chi)=gd(xi)`, `R=cosh(xi)^2`) at multiple interior points, including near-boundary and both chi signs. |
 | `test_normal_form.py` | Normal-form extraction verified against trajectories with a known analytic derivative; boundary guard tests. |
 | `test_family_test_synthetic.py` | The central falsifiability demonstration: synthetic trajectories from a shared potential collapse to a small residual, while trajectories from a deliberately mismatched potential are rejected with a materially larger one. |
+| `test_gauge_running.py` | Tests for the gauge-coupling-running adversarial example: exact partition algebra, the closed-form cross-check, exact separability (`V=S^2*v(chi)`), the lambda^2 scale-transformation law, non-collapse of a genuine different-S family (with a fixed-S control that does collapse), and the S-normalization rescue attempt. |
 
 ## `docs/`
 
@@ -61,6 +62,7 @@ caller-supplied judgment.
 | `prior_work_map.md` | How the note relates to eight earlier papers, with novelty stated conservatively. |
 | `limitations.md` | What the note does not settle, and what would be required to settle it. |
 | `software_scope.md` | What `src/constraint_geometry` computes (formally defined operations) versus what it deliberately never decides (domain embeddings, physical equivalence, pass/fail verdicts without a caller-supplied threshold). |
+| `state_dimension.md` | Constraint-state dimension (`chi`, relative composition) versus domain-dynamical-state dimension (`(chi,S)`, required to close the one-loop gauge-running system) — the distinction between algebraic separability of a potential's shape and autonomous reduction of its dynamics. |
 
 ## `examples/`
 
@@ -71,6 +73,7 @@ caller-supplied judgment.
 | `effective_potentials.md` | The Fisher kinetic skeleton, the universal-denominator/contextual-numerator split, and why single-trajectory extraction is tautological. |
 | `newtonian_two_body.md` | The cleanest empty case: an exact embedding with a physically meaningless landmark. |
 | `bernoulli_fisher.py` | Executable EXACT ALGEBRA example: the Bernoulli Fisher information `I_F(p)=1/[p(1-p)]` re-expressed as `1/h^2 = 4R` in partition coordinates. Runs directly with `python examples/bernoulli_fisher.py`. |
+| `gauge_running.py` | Executable adversarial example: gauge-coupling running as a test of the autonomous-partition-potential hypothesis. Derives the closed `(chi,S)` system, the separable closed-form potential, the exact lambda^2 scale-transformation law, and an INFORMATIVE NEGATIVE RESULT (no autonomous `V(chi)` fits the family) with a passing control. Runs directly with `python examples/gauge_running.py`. |
 
 ## `figures/`
 

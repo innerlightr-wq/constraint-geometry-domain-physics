@@ -105,6 +105,21 @@ potential `V(chi) = 1/4 * chi^4` does not. The software:
   file declares `1e-2` as its own threshold and states why, exactly as
   `pass_fail` requires.
 
+## What Milestone 2 adds
+
+`examples/gauge_running.py` and `tests/test_gauge_running.py` reuse the
+Milestone-1 API unchanged (`FamilyMember`, `shared_V_family_test`,
+`extract_normal_form`, coordinate functions) against a gauge-coupling-running
+domain model, as an adversarial test of the autonomous-partition-potential
+hypothesis rather than another successful correspondence. The result is an
+**informative negative case**: same `chi` (composition ratio) at different
+absolute scale `S` means the same partition state but a different domain
+evolution rate — the extracted potential is algebraically separable
+(`V=S^2*v(chi)`) but the dynamics do not close on `chi` alone. See
+[`state_dimension.md`](state_dimension.md) for the full statement, kept
+carefully distinct from a claim that `chi` is dynamically insufficient in
+general.
+
 ## Relationship to the manuscript
 
 The manuscript (`paper/constraint_geometry_domain_physics.tex`) remains
