@@ -1,0 +1,7 @@
+scripts/data_simulations.json
+__pycache__/
+*.aux
+*.log
+*.out
+*.bbl
+*.blg
