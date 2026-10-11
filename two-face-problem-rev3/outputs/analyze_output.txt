@@ -1,0 +1,42 @@
+filtered N=3527; nonspinning N=81
+
+== T1 paper's bins
+  [0.00,0.10) N= 665 Var(chi)=6.89e-04 best partial R2=3.753e-03 (product)
+  [0.10,0.20) N= 250 Var(chi)=1.12e-03 best partial R2=1.394e-02 (asym)
+  [0.20,0.30) N= 204 Var(chi)=8.38e-04 best partial R2=6.764e-03 (rapidity)
+  [0.30,0.40) N= 534 Var(chi)=2.98e-04 best partial R2=2.163e-02 (asym)
+  [0.40,0.50) N= 331 Var(chi)=9.77e-04 best partial R2=4.312e-03 (rapidity)
+  [0.50,0.65) N= 728 Var(chi)=1.62e-03 best partial R2=3.908e-03 (altitude)
+  [0.65,0.95) N= 815 Var(chi)=2.64e-03 best partial R2=6.678e-03 (logR)
+  ratio last/first=1.8  Pearson(chi_mid,best)=-0.17  Pearson(log Var(chi), log best)=-0.49
+
+== T1 equal-width bins
+  [0.00,0.13) N= 743 Var(chi)=1.57e-03 best partial R2=1.715e-02 (response)
+  [0.13,0.26) N= 282 Var(chi)=1.42e-03 best partial R2=1.830e-02 (rapidity)
+  [0.26,0.39) N= 608 Var(chi)=5.47e-04 best partial R2=1.428e-02 (rapidity)
+  [0.39,0.52) N= 452 Var(chi)=1.33e-03 best partial R2=4.858e-03 (response)
+  [0.52,0.65) N= 627 Var(chi)=9.86e-04 best partial R2=6.873e-03 (asym)
+  [0.65,0.78) N= 699 Var(chi)=1.37e-03 best partial R2=1.230e-02 (response)
+  [0.78,0.91) N= 116 Var(chi)=7.11e-04 best partial R2=2.719e-02 (response)
+  ratio last/first=1.6  Pearson(chi_mid,best)=+0.11  Pearson(log Var(chi), log best)=-0.24
+
+== T2 native coordinate for E_rad/M (nonspinning N=81); 5-fold CV RMSE x1e4
+  degree 1: theta (Fisher)=18.20  eta (h^2)=20.73  xi (rapidity)=21.16  chi=25.41  h=34.87  R=87.99
+  degree 2: eta (h^2)=2.05  h=6.71  chi=9.48  theta (Fisher)=15.45  xi (rapidity)=20.03  R=61.02
+  degree 3: eta (h^2)=0.97  chi=1.01  h=1.66  theta (Fisher)=2.75  xi (rapidity)=9.54  R=82.64
+
+== T2 native coordinate for final spin a_f (nonspinning N=81); 5-fold CV RMSE x1e4
+  degree 1: eta (h^2)=65.29  h=84.95  xi (rapidity)=248.58  theta (Fisher)=370.67  chi=483.64  R=715.26
+  degree 2: eta (h^2)=3.96  h=14.82  chi=35.60  theta (Fisher)=79.13  xi (rapidity)=242.93  R=378.85
+  degree 3: h=2.19  eta (h^2)=2.23  chi=8.05  theta (Fisher)=14.50  xi (rapidity)=26.61  R=361.52
+
+== T3 leakage law E_rad ~ (1-sqrt(8/9)) eta as eta->0 (nonspinning)
+  eta<0.12: N=21, extrapolated E_rad/eta at eta=0: 0.0598  (test-particle 1-sqrt(8/9)=0.0572)
+  eta<0.09: N=9, extrapolated E_rad/eta at eta=0: 0.0597  (test-particle 1-sqrt(8/9)=0.0572)
+  global quadratic fit E_rad = c1 eta + c2 eta^2: [0.0464 0.5849]
+
+== T4 recoil (nonspinning): single-coordinate polys vs mixed Fitchett/Gonzalez form
+  degree 2: chi=2.57  theta (Fisher)=4.28  xi (rapidity)=8.11  eta (h^2)=11.01  h=14.05  R=24.84  (x1e-5)
+  degree 3: xi (rapidity)=2.43  chi=2.59  theta (Fisher)=2.98  eta (h^2)=6.32  h=8.08  R=38.35  (x1e-5)
+  mixed h^4*chi*(A + B h^2) (2 params, no intercept): CV RMSE=2.07 x1e-5; A=0.0436, B/A=-1.337
+  peak of eta^2 sqrt(1-4eta)(1+B/A eta) on grid: eta*=0.1920

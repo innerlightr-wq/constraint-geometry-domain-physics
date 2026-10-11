@@ -1,0 +1,27 @@
+== Y = linear in chi, constant slope + context + noise
+  [0.00,0.05) N= 20000 best partial R2=4.49e-05 (product) margin=0.00%
+  [0.05,0.10) N= 20000 best partial R2=1.34e-04 (response) margin=0.03%
+  [0.10,0.15) N= 19999 best partial R2=1.28e-04 (asym) margin=0.02%
+  [0.15,0.20) N= 20000 best partial R2=6.30e-05 (response) margin=0.06%
+  [0.20,0.30) N= 39999 best partial R2=3.32e-04 (response) margin=0.05%
+  [0.30,0.50) N= 80000 best partial R2=8.34e-04 (asym) margin=0.22%
+  [0.50,0.99) N=196000 best partial R2=3.96e-03 (product) margin=0.01%
+  ratio last/first=88.2  Pearson(chi_mid,best)=+0.94  Pearson(chi_mid,margin)=+0.22
+== Y = smooth sin(chi) + context + noise
+  [0.00,0.05) N= 20000 best partial R2=2.09e-04 (product) margin=0.02%
+  [0.05,0.10) N= 20000 best partial R2=6.86e-04 (rapidity) margin=0.00%
+  [0.10,0.15) N= 19999 best partial R2=2.56e-04 (asym) margin=0.00%
+  [0.15,0.20) N= 20000 best partial R2=3.49e-04 (response) margin=0.04%
+  [0.20,0.30) N= 39999 best partial R2=5.99e-04 (response) margin=0.09%
+  [0.30,0.50) N= 80000 best partial R2=1.66e-03 (response) margin=0.24%
+  [0.50,0.99) N=196000 best partial R2=4.15e-04 (product) margin=2.34%
+  ratio last/first=2.0  Pearson(chi_mid,best)=+0.27  Pearson(chi_mid,margin)=+0.91
+== Y = depends on h + context + noise
+  [0.00,0.05) N= 20000 best partial R2=1.75e-04 (rapidity) margin=0.00%
+  [0.05,0.10) N= 20000 best partial R2=2.97e-05 (asym) margin=0.18%
+  [0.10,0.15) N= 19999 best partial R2=6.40e-05 (response) margin=0.03%
+  [0.15,0.20) N= 20000 best partial R2=7.56e-05 (response) margin=0.07%
+  [0.20,0.30) N= 39999 best partial R2=1.48e-05 (response) margin=0.04%
+  [0.30,0.50) N= 80000 best partial R2=4.96e-05 (response) margin=0.50%
+  [0.50,0.99) N=196000 best partial R2=1.71e-03 (rapidity) margin=0.32%
+  ratio last/first=9.8  Pearson(chi_mid,best)=+0.84  Pearson(chi_mid,margin)=+0.68

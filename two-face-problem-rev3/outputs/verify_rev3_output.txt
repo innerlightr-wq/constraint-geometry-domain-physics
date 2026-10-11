@@ -1,0 +1,51 @@
+PASS a+b=1, chi=a-b
+PASS circle (a-b)^2+4ab=(a+b)^2 for any a,b
+PASS 4h^2+chi^2=1
+PASS (AM-GM)/(GM-HM)=gamma
+PASS Fisher: da^2/a+db^2/b = dchi^2/(1-chi^2)
+PASS Fisher flat coord theta=arcsin chi
+PASS rapidity metric flat coord xi=atanh chi
+PASS radial metric chi^2/(1-chi^2)^4 flat coord y=R/2
+PASS metric inversion g_C = J^2 gamma^2 g_P
+PASS chi=tanh xi=sin gd xi
+PASS cos gd = sech
+PASS R=cosh^2 xi
+PASS dictionary: asym sqrt(1-1/(2y))
+PASS dictionary: coupling 1/sqrt(8y)
+PASS dictionary: momentum sqrt(2y-1)
+PASS dictionary: gamma sqrt(2y)
+PASS logit p = 2 xi
+PASS R = d xi/d chi
+PASS I_F=1/(p(1-p))=1/h^2=4R=8y
+PASS 1/(e^x+1)=(1-tanh(x/2))/2
+PASS sqrt((1-beta)/(1+beta))=e^-xi
+PASS VSWR=(1+chi)/(1-chi)=e^{2xi}
+PASS resistive Gamma=(z-1)/(z+1)=tanh(ln(z)/2)
+PASS I(1)/I(-1)=1/8 (and I(alpha)=B(alpha/2+1,alpha/2+1))
+PASS G(0.3) integral=phi/h=closed form=(gd xi+pi/2)cosh xi
+PASS G(1.7) integral=phi/h=closed form=(gd xi+pi/2)cosh xi
+PASS G(2.0) integral=phi/h=closed form=(gd xi+pi/2)cosh xi
+PASS G(3.5) integral=phi/h=closed form=(gd xi+pi/2)cosh xi
+   note: old Rev 2 Poincare form 2 gd(xi)cosh(xi) at equipartition gives 0.0 vs G(2)= 1.5707963267948966
+PASS leakage circle radius (1-L)
+PASS R_act=R_cond/(1-L)^2
+PASS LCDM: V^(1) in e-folds = -(9/8)(1-chi^2)
+PASS LCDM: d xi/dN = -3/2
+PASS Einstein addition multiplies odds
+PASS E_ISCO=sqrt(8/9)
+PASS theta = 2 phi - pi/2
+PASS Fisher distance = 2 d phi
+PASS Mercator: ln(sec+tan)=gd^-1 = arccosh(sec) (lat>=0)
+PASS I(0.5) = Beta = rapidity form
+PASS I(1) = Beta = rapidity form
+PASS I(2.5) = Beta = rapidity form
+PASS I(-1) = Beta = rapidity form
+PASS SR: ab=(1-beta^2)/4=-ds^2/(4c^2dt^2)
+PASS VSWR=max(z,1/z) at z=0.3
+PASS VSWR=max(z,1/z) at z=1.0
+PASS VSWR=max(z,1/z) at z=4.0
+PASS LCDM scale-factor shape, a=OmL
+PASS LCDM scale-factor shape, a=Om
+PASS two fluids: dxi/dN = (3/2)(w_b - w_a)
+
+48 PASS, 0 FAIL
